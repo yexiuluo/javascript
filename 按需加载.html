@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>按需加载</title>
+	<script src="animate.js"></script>
+	<script src="zidong.js"></script>
+	<script src="按需加载.js"></script>
+	<style type="text/css"> 
+     .head ,.flooter{
+     	width: 1210px;
+     	height: 170px;
+     	background: #1592FA;
+     	margin: 0 auto;
+
+     }
+     .top{
+          width: 1210px;
+          height: 40px;
+          background: red;
+          margin: 0 auto;
+          position: fixed;
+          top:-40px;
+          left: 200px;
+
+
+     }
+
+     .floor1{
+     	width: 800px;
+     	height: 500px;
+     	background:#fefefe ;
+     	margin: 10px auto;
+     	text-align: center;
+     }
+      .floor2{
+     	width: 800px;
+     	height: 500px;
+     	background:#fefefe ;
+     	margin: 10px auto;
+     	text-align: center;
+     }
+      .floor3{
+     	width: 800px;
+     	height: 500px;
+     	background:#fefefe ;
+     	margin: 10px auto;
+     	text-align: center;
+     }
+      .floor4{
+     	width: 800px;
+     	height: 500px;
+     	background:#fefefe ;
+     	margin: 10px auto;
+     	text-align: center;
+     }
+      .floor5{
+     	width: 800px;
+     	height: 500px;
+     	background:#fefefe ;
+     	margin: 10px auto;
+     	text-align: center;
+     }
+     .jump{
+          width: 30px;
+          height: 150px;
+          position: fixed;
+          left: 60px;
+          top: 20px;
+          background-color: #f4f4f4;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+     }
+     .jump li{
+          width: 30px;
+          height: 29px;
+          border-bottom: 1px dashed #ccc;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          line-height: 29px;
+          cursor: pointer;
+
+     }
+     .back{
+          width: 30px;
+          height: 30px;
+          position: fixed;
+          right: 30px;
+          bottom: 30px;
+          background: #666;
+          border-radius: 4px;
+          box-shadow: 0 3px 10px  #ccc;
+          opacity:0;
+      }
+     
+	</style>
+</head>
+<body>
+
+	<div class="head">
+		head
+	</div>
+     <div class="top"></div>
+	<div class="floor floor1">
+		<img src=""  title ="image/b1.jpg" />
+	</div>
+	<div class="floor floor2"><img src=""  title="image/b2.jpg" /></div>
+	<div class="floor floor3"><img src="" title="image/b3.jpg"/></div>
+	<div class="floor floor4"><img src="" title="image/b4.jpg"/></div>
+	<div class="floor floor5"><img src="" title="image/b5.jpg"/></div>
+	<div class="flooter">
+		flooter
+	</div>
+      <ul class="jump">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+     </ul>
+     <div class="back"></div>
+</body>
+</html>

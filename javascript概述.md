@@ -5,7 +5,7 @@
 * 二
 * 三
 * 四
-##基础部分
+ ##基础部分
  > 变量 数据类型         (数据存储)
  > 分支和循环 运算符    (逻辑操作)
  > 函数（对语言的扩展）
@@ -82,8 +82,7 @@ dom对象
 
 
 
- *getComputedStyle(el,null) width
- *el.currentStyle.width
+
  *el.documentElement.clientHeight
  *el.documentElement.documentElement.documentElement.clientLeft
  *el.documentElement.documentElement.clientTop
@@ -132,7 +131,7 @@ dom对象
    *scrollLeft -->
   
 
-  ###节点操作 (NODE)
+  ###节点操作 (NODE)目标对象
   el.appendChild()
   el.removeChild()
   el.insertBefore()
@@ -142,14 +141,16 @@ dom对象
   *el.nodeType
   *el.nodeValue -->
   ###获取元素信息（HTML ELEMENT）
-  无单位
+  //无单位
   *el.offsetWidth 
   * el.offsetleft
    *el.offsettop
    *el.offsetHeight
-   *el.offsetParent
-    *el.getBoundingClietRect()
+   *el.offsetParent//具有定位属性的父元素
+    *el.getBoundingClietRect()//计算元素距离窗口位置
      *el.innerHTML
+      *getComputedStyle(el,null).width  //取出的是一个带单位的字符串
+        *el.currentStyle.width
      ###样式操作
       *el.style(读取行内样式的值，设置行内样式的值)
      ### get和set在dom对象中的应用

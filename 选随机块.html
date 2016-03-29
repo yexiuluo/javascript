@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ayu</title>
+	<style type="text/css">
+		.box{
+			width: 500px;
+			height: 700px;
+			border: 2px solid blue;
+			margin: 0 auto;
+			position: relative;
+
+		}
+		.xiao{
+			width: 50px;
+			height: 50px;
+			border: 1px solid green;
+			position: absolute;
+			left: 0px;
+			top:0px;
+		}
+		.span{
+			width: 50px;
+			height: 50px;
+			border: 1px solid green;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+
+		.list{
+			position: absolute;
+			left:10px;
+			bottom: 10px;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<ul class="list">
+		<li zhao=id>id的span</li>
+		<li zhao=tg>tg的span</li>
+		<li zhao=cl>class的span </li>
+		<li zhao=q>querySelector的span </li>
+		<li zhao=qa>querySelectorAll的span </li>
+
+	</ul>
+
+</body>
+<script type="text/javascript">
+	var box=document.getElementsByClassName('box')[0]
+	
+	
+
+	var dong=function() {
+		var rm=Math.floor(Math.random()*10)
+            
+		for(var i =0;i<10;i++){
+			var x ;
+			x=document.createElement(i==rm?'span':'div')
+            if (i==rm){
+                 x.id='span' ;
+            }
+			x.className='xiao'
+
+			box.appendChild(x)
+			x.style.left=Math.floor(Math.random()*(box.offsetWidth-50))+'px' ;
+
+			x.style.top=Math.floor(Math.random()*(box.offsetHeight-50))+'px' ;
+
+		}
+	}
+	dong()
+
+       var li=box.nextElementSibling.children;
+       // var ids=document.querySelector('#span')
+	for(var i=0,el;i<li.length;i++){
+		 li[i].onclick=function(){
+		 	var sx=this.getAttribute('zhao');
+		 	 if (sx='id' ) {
+		 		var el=document.getElementById('span')
+		 	}
+		 	else if (sx='tg ') {
+		 		var el=document.getElementsByTagName('span')
+		 	}
+		 	else if (sx='cl' ) {
+		 		var el=document.getElementsByClassName('span')
+		 	}
+		 	else if (sx='q') {
+		 		var el=document.querySelector('.span')
+		 	}
+		 	else if (sx='qa' ) {
+		 		var el=document.querySelectorAll('.span')
+		 	}
+		 	else if (!el) {return};
+
+		 	el.style.background="red";
+					setTimeout(function(){
+						el.style.background='white';
+						//清空1
+						while(box.firstElementChild){
+							box.removeChild(box.firstElementChild)
+						}
+						//清空2  boxs.innerHTML="";
+						//重新布局
+						dong()
+					},500)
+		 	
+
+		 }
+		 
+	}
+	          
+
+					
+	
+
+</script>
+</html>

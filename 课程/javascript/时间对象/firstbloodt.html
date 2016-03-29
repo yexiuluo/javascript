@@ -32,12 +32,12 @@
 	<div class="da"></div>
 	<div class="da" style="width:px;"></div>
 	<div class="da"></div> 
-	<div class="mobang"></div>
+	<div class="mobang"><img src="mobang.png"></div>
 </body>
 <script type="text/javascript">
 	var els=document.getElementsByClassName('da');
 	var xs=document.getElementsByClassName('selected');
-	var mo=document.getElementsByClassName('mobang');
+	var mo=document.getElementsByClassName('mobang')[0];
 
 	
 	for (var i = 0; i < els.length; i++) {
@@ -92,6 +92,20 @@
  }
    
 
+    mo.onmousedown=function(e){
+      var oX=e.layerX;
+      var oY=e.layerY;
+      mm=function(e){
+        mo.style.left=e.clientX-oX+'px';
+        mo.style.top=e.clientY-oY+'px';}
+      mo.onmousemove=mm;
+      
+        mo.onmouseup=function(){
+          mo.removeEventListener('mousemove',mm,false)
+        }
+      
+      
+    }
 
 	
 	

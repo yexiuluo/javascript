@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单事件</title>
+</head>
+<style >
+    ul li{
+        padding: 0px;
+    	margin: 0px;
+    	list-style: none;
+
+    }
+    ul{ 
+    	width: 500px;
+    	height: 500px;
+    	margin: auto;
+    	border: 1px solid #000;
+    	border-radius: 15px; 
+    	position: relative;
+
+    }
+    .zhuce{
+         margin: auto;
+         position:absolute;
+         left: 0;
+         top: 0;
+         bottom: 0;
+         right: 0;
+
+
+    }
+   .zhuce input{
+    
+    	padding: 10px;
+    	border: none;
+    	margin-top: 20px;
+    	/*border-top: 1px solid #000;*/
+    	border-bottom: 1px solid #000;
+    	outline: none;
+    	width: 80%;
+    	display:inline-block;
+
+    }
+      .h2{
+    	/*display: inline-block;*/
+    	   width:15%;
+    
+          border: 1px solid #aaaaaa;
+          font-size: 18px;
+          border-radius: 15px;
+          margin-top: 40px;
+    }
+    .h2{
+    	/*display: inline-block;*/
+    	   width:15%;
+    
+          border: 1px solid #aaaaaa;
+          font-size: 18px;
+          border-radius: 15px;
+    }
+      .h1{
+    	/*display: inline-block;*/
+    	   width:25%;
+    
+          border: 1px solid #aaaaaa;
+          font-size: 18px;
+          border-radius: 15px;
+    }
+    .warning{
+        color: #fff;
+         background: #ff1010;
+         display: inline-block;
+         border-radius: 2px;
+         padding: 1px 15px;
+         font-size: 12px;
+    }
+    .success{
+         color: #fff;
+         background: #20ff10;
+         display: inline-block;
+         border-radius: 10px;
+    }
+    .zhuceanniu{
+    	display: inline-block;
+    	padding: 10px 20px;
+    	background: #ff5050;
+    	color: #000;
+    	cursor: pointer;
+    }
+    .active{
+    	background: #40bb33;
+    	color:#000;
+    }
+	div{
+		background-image: url(xiao.jpg);
+	}
+</style>
+<body>
+<form method="get" action="表单事件.html"></form>
+	<!-- <select name="s">
+		<option value="x">给我一把锤子</option>
+		<option value="y">给我五把锤子</option>
+	</select><br/><br/><br/>
+	喜欢类型：<br>
+	眼睛大<input type="checkbox" value="1" name="checkbox">
+	漂亮<input type="checkbox" value="2" name='checkbox'>
+	善良<input type="checkbox" value="3" name="checkbox"> <br/><br/><br/>
+	你的性别：<br/>
+	<lable>女<input type="radio" value="nv" name ='radio'></lable>
+	<lable>男<input type='radio' value="nan" name='radio'></lable>
+	<br/><br/><input type="file" value="wenjian" name="file">
+	<br/><br/><div><textarea name="wenben" rows="11" cols="10">赵欣老是肚子疼               怎么办              怎么办              快问问医生吧         嘿嘿哈嘿</textarea></div>
+ -->
+	<ul class="zhuce">
+		<li>
+			<h2 class="h2">用户：<h1><input type="text" name="user"><span class='tip'></span>
+		</li>
+		<li>
+			<h2 class="h2">密码：<h1><input type="password" name="passfirst" value=""><span class="tip"></span>
+		</li>
+		<li>
+			<h1 class="h1">重复密码:<h1>
+			<input type="password" value="" name="passrepeat"><span class='tip' ></span>
+
+		</li>
+		<div class="zhuceanniu" id="btn">注册</div>
+	</ul>
+
+</body>
+<script >
+	var passfirst=document.getElementsByName('passfirst')[0]
+
+
+	var passrepeat=document.getElementsByName('passrepeat')[0]
+	var u=document.getElementsByName('user')[0]
+	var anniu=document.querySelector('.zhuceanniu')
+	var state={'yi':false,'er':false,'san':false}
+	var panduan=function(){
+		if (state['yi']&&state['er']&&state['san']) {
+            anniu.classList.add('active')
+            anniu.setAttribute('nengfoudian','neng')
+		}else{
+			anniu.classList.remove('active')
+			anniu.removeAttribute('nengfoudian')
+		}
+	}
+	// var user=['zhangsan','lisi','wangwu','zhaoliu']
+	// var  shifouzai=function(n){
+	// 	for (var i = 0; i < user.length; i++) {
+	// 		if (user[i]==n) {
+	// 			return true;
+	// 		};
+	// 	};
+	// 	return false;
+	// }
+	var user={}
+
+	for (var i = 0; i < 800; i++) {
+		user[i]=true;
+	};
+	// console.dir(user)
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+	u.onchange=function(){
+		// var span=this.parentElement.querySelector('.tip')
+		if (user[this.value]) {
+			// span.innerHTML='用户已存在'
+			// span.classList.add('warning')
+			// state['yi']=false;
+			tianjiajinggao(this,'用户已存在')
+			state['yi']=false;
+		}else{
+			// span.classList.remove('warning')
+			// span.innerHTML='' 
+			// state['yi']=true;
+			shanchujinggao(this)
+			 state['yi']=true;
+		}
+		
+		panduan()
+	}
+	
+	
+	passfirst.onchange=function(){
+		// var span=this.parentElement.querySelector('.tip')
+
+		if (this.value.length<6) {
+			// span.innerHTML="too sort"
+			// span.classList.add('warning')
+			// state['er']=false;
+			tianjiajinggao(this,'长度不够')
+			state['er']=false;
+		}else{
+			// span.classList.remove('warning')
+			// state['er']=true;
+			shanchujinggao(this)
+            state['er']=true;
+		}
+		
+		 panduan()
+	}
+   
+	passrepeat.onchange=function(){
+		// var span=this.parentElement.querySelector('.tip')
+     
+
+      if (this.value!==passfirst.value) {
+      	// span.innerHTML= "you are a bad girl"
+
+      	// span.classList.add('warning')
+      	// state['san']=false;
+      	tianjiajinggao(this,'两次密码不一致')
+      	state['san']=false;
+      }else{
+      	// span.classList.remove('warning')
+      	// span.innerHTML=''
+      	// state['san']=true;
+      	shanchujinggao(this)
+        state['san']=true;
+      }
+     
+      panduan()
+  }
+    var tianjiajinggao=function(el,info){
+        var tip=el.parentElement.querySelector('.tip')
+              
+        	tip.innerHTML=info;
+        	// tip.classList.remove('success')
+        	tip.classList.add('warning')
+        	
+        	
+       
+   }
+   var shanchujinggao=function(el){
+             var tip=el.parentElement.querySelector('.tip');
+
+             tip.innerHTML=''
+             tip.classList.remove('warning');
+             // tip.classList.add('success');
+             
+             
+   }
+     
+  anniu.onclick=function(){
+  	if (this.hasAttribute('nengfoudian')) {
+  		this.innerHTML='注册中···'
+  		setTimeout(function(){
+  			
+  			location.href='键盘事件.html'
+  		},2000)
+  	};
+  }
+// var textarea=document.getElementsByName('wenben')[0]
+// textarea.onfocus=function(){
+// 	console.log('onfocus')
+// }
+// textarea.onblur=function(){
+// 	console.log('onblur')
+// }
+// textarea.onchange=function(){
+// 	console.log('onchange')
+// }
+// var f=document.getElementsByName('file')
+//  f.onfocus=function(){
+//  	console.log('onfocus')
+//  }
+//   f.onblur=function(){
+//  	console.log('onblur')
+//  }
+//   f.onchange=function(){
+//  	console.log('onchange')
+//  }
+
+// var r=document.getElementsByName('radio')
+// for (var i = 0; i < r.length; i++) {
+// 	rd=r[i]
+// 	rd.onfocus=function(){
+//       console.log('onfocus')
+// 	}
+// 	rd.onblur=function(){
+// 		console.log('onblur')
+// 	}
+// 	rd.onchange=function(){
+// 		console.log('onchange')
+// 	}
+// };
+
+// var c=document.getElementsByName('checkbox')
+// for (var i = 0; i < c.length; i++) {
+// 	 var cd=c[i]
+// 	 cd.onfocus=function(){
+// 	 	console.log('onfocus')
+// 	 }
+// 	 cd.onblur=function(){
+// 	 	console.log('onblur')
+// 	 }
+// 	 cd.onchange=function(){
+// 	 	console.log('onchange')
+// 	 }
+// };
+
+// 	var select=document.getElementsByName('s');
+// 	for (var i = 0; i < select.length; i++) {
+// 		var sd=select[i]
+// 		sd.onfocus=function  () {
+// 			console.log('onfocus')
+			
+// 		}
+// 		sd.onblur=function  () {
+// 			console.log('onlur')
+			
+// 		}
+// 		sd.onchange=function  () {
+// 			console.log('onchange')
+			
+// 		}
+// 	};
+</script>
+</html>

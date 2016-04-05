@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选变色</title>
+	<style type="text/css">
+      .da{
+      	transition:all .9s ease;
+      	opacity: 0.6;
+      	width: 80px;
+      	height: 80px;
+      	border: 1px solid black;
+      	float: left;
+      }
+      .selected{
+      	background: red;
+      }
+      .mobang{
+      	width: 50px;
+      	height: 50px;
+      	background: yellow;
+      	position: absolute;
+      	left: 20px;
+      	top:150px;
+      }
+
+	</style>
+</head>
+<body>
+	<div class="da"></div>
+	<div class="da"></div>
+	<div class="da"></div>
+	<div class="da" style="width:px;"></div>
+	<div class="da"></div> 
+	<div class="mobang"><img src="mobang.png"></div>
+</body>
+<script type="text/javascript">
+	var els=document.getElementsByClassName('da');
+	var xs=document.getElementsByClassName('selected');
+	var mo=document.getElementsByClassName('mobang')[0];
+
+	
+	for (var i = 0; i < els.length; i++) {
+		els[i].onclick=(function(){
+             var kaiguan=true;
+             return function(e){
+                if (e.ctrlKey||e.altKey||e.shiftKey) {
+                	if (kaiguan===true) {
+                       
+                        var r=Math.floor(Math.random()*255);
+                        var g=Math.floor(Math.random()*255);
+                        var b=Math.floor(Math.random()*255);
+                         this.classList.add('selected')
+                        this.style.backgroundColor='rgb('+r+','+g+','+b+')';
+                        kaiguan=false;
+                	}else{
+
+                		this.classList.remove('selected');
+                		this.style.backgroundColor='transparent';
+                		this.style.position='static'
+                		kaiguan=true;
+                	}
+
+
+                }
+             }
+		})()
+	}
+
+	 document.ondblclick=function(e){
+ 	for (var i = 0; i < xs.length; i++) {
+ 		var xd=xs[i];
+ 		xd.style.position='absolute';
+ 		xd.style.left=e.clientX-xd.offsetWidth/2+'px';
+ 		xd.style.top=e.clientY-xd.offsetHeight/2+'px';
+        
+      
+ 	}
+ }
+
+ document.onmousedown=function(e){
+    document.onmouseup=function(eu){
+    	var pianyix=eu.clientX-e.clientX;
+    	var pianyiy=eu.clientY-e.clientY;
+    	for (var i=0;i<xs.length;i++){
+    		var xd=xs[i]
+    		xd.style.left=xd.offsetLeft+pianyix+'px';
+    		xd.style.top=xd.offsetTop+pianyiy+'px';   
+    		 	}
+
+    }
+ }
+   
+
+    mo.onmousedown=function(e){
+      var oX=e.layerX;
+      var oY=e.layerY;
+      mm=function(e){
+        mo.style.left=e.clientX-oX+'px';
+        mo.style.top=e.clientY-oY+'px';}
+      mo.onmousemove=mm;
+      
+        mo.onmouseup=function(){
+          mo.removeEventListener('mousemove',mm,false)
+        }
+      
+      
+    }
+
+	
+	
+</script>
+</html>

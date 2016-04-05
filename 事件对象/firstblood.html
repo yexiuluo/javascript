@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	.da{
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+		float: left;
+	}
+	.selected{
+	
+
+		background: red;
+	}
+	.ss{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		background: red;
+	}	
+</style>
+<body>
+	<div class="da">
+
+		
+	</div>
+	<div class="da" ></div>
+	<div class="da" ></div>
+	<div class="da" style="width:400px;" ></div>
+	<div class="da" ></div>
+</body>
+<script type="text/javascript">
+ // var el=document.getElementsByClassName('da');
+ var els=document.getElementsByClassName('da');
+ var xs=document.getElementsByClassName('selected')
+
+ // el.onmouseover=function(e){
+ // 	console.log('onmouseover',e)
+ // }
+ // el.onmousemove=function(e){
+ // 	console.log('onmousemove',e)
+ // }
+ // el.onmouseout=function(e){
+ // 	console.log('onmouseout',e)
+ // }
+ // el.onmousedown=function(e){
+ // 	console.log('onmousedown',e)
+ // }
+ // el.onmouseup=function(e){
+ // 	console.log('onmouseup',e)
+ // }
+ // el.onclick=(function(){
+ // 	var kaiguan=true;
+ // 	return function(e){
+ 		
+ // 		if (e.ctrlKey||e.altKey||e.shiftKey) {
+ //          this.className=kaiguan?'da selected':'da'
+ //            kaiguan=!kaiguan;
+ // 		};
+ // 	}
+ // })()
+ // el.ondblclick=function(e){
+ // 	console.log('ondblclick',e)
+ // }
+ for (var i = 0; i < els.length; i++) {
+ 	 els[i].onclick=(function(){
+ 	 	var kaiguan=true;
+ 	 	return function(e){
+            if(e.ctrlKey||e.altKey||e.shiftKey){
+            	// this.className=kaiguan?'da selected':'da';
+             //    kaiguan=!kaiguan;
+             //    if (kaiguan==false) {
+             //    	this.style.position='static'
+             //    };
+             if (kaiguan===true) {
+             var r=Math.floor(Math.random()*255)
+             var g=Math.floor(Math.random()*255)
+             var b=Math.floor(Math.random()*255)
+             this.className='da selected'
+             this.style.backgroundColor='rgb('+r+','+g+','+b+')';
+             kaiguan=false;
+             }else{
+             	this.className='da';
+             	this.style.backgroundColor='transparent'
+             	this.style.position='static'
+             	kaiguan=true;
+
+             }
+           
+
+            
+            }
+ 	 	}
+
+ 	 })()
+
+ }
+ document.ondblclick=function(e){
+ 	for (var i = 0; i < xs.length; i++) {
+ 		var xd=xs[i];
+ 		xd.style.position='absolute';
+ 		xd.style.left=e.clientX-xd.offsetWidth/2+'px';
+ 		xd.style.top=e.clientY-xd.offsetHeight/2+'px';
+        
+      
+ 	}
+ }
+ 
+
+
+	
+</script>
+</html>

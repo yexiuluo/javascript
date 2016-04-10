@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style >
+     .tip{
+     	border: 2px dashed #000;
+     }
+     .feeds{
+     	width: 80%;
+     	height: 500px;
+     	border: 1px solid #000;
+     	margin: auto;
+     	position: absolute;
+     	left: 0;
+     	top: 0;
+     	bottom: 0;
+     	right: 0;
+     	padding: 30px;
+          overflow: auto;
+     }
+     .feed{
+          height: 300px;
+     	border: 1px solid red;
+     }
+	</style>
+</head>
+<body>
+ <div class="tip"> 你有5条新微博</div>
+	<div class="feeds">
+		<div class="feed"><span>zhangsan</span><p>今天是阴天</p><span class='zan'>赞(20)</span></div>
+		<div class="feed"><span>zhangsan</span><p>阴天适合睡觉</p><span class='zan'>赞(2000)</span></div>
+
+	</div>
+
+</body>
+<script >
+     var feeds=document.querySelector('.feeds')
+      // var feed=document.querySelectorAll('.feed')
+      var span=document.querySelectorAll('.zan')
+      // for (var i = 0; i < span.length; i++) {
+      //      span[i].onclick=(function(){
+      //          var kaiguan=true;
+      //          return function(){
+              
+      //         if (kaiguan) {
+      //           var zhi=parseInt(this.innerHTML.slice(2).slice(0,-1))+1
+      //            this.innerHTML='赞('+zhi+')'
+      //          this.style.color='red';
+      //          kaiguan=false;
+      //     }else{
+      //           var zhi1=parseInt(this.innerHTML.slice(2).slice(0,-1))-1
+      //            this.innerHTML='赞('+zhi1+')'
+      //          this.style.color='';
+      //          kaiguan=true;
+
+
+      //     }
+             
+              
+      //      }
+      //      })()
+
+           
+      // };
+
+  var shuju=[
+{name:'lisi',xinqing:'阴天绝对适合睡觉',zanshu:'赞(200)'},
+{name:'wangwu',xinqing:'阴天绝对适合睡觉',zanshu:'赞(2000)'},
+{name:'zhaoliu',xinqing:'阴天绝对适合睡觉',zanshu:'赞(300)'},
+{name:'wuqi',xinqing:'阴天绝对适合睡觉',zanshu:'赞(3000)'}
+  ]
+var tip=document.querySelector('.tip')
+  tip.onclick=function(){
+     for (var i = 0,el; i < shuju.length; i++) {
+          var sd=shuju[i];
+          el=document.createElement('div')
+          el.innerHTML='<span>'+sd.name+'</span><p>'+sd.xinqing+'</p><span class="zan">'+sd.zanshu+'</span>';
+          el.classList.add('feed')
+
+          feeds.insertBefore(el,feeds.firstElementChild)
+         
+     };
+    
+  }
+
+  feeds.onclick=(function(){
+     var kaiguan=true;
+     return  function(e){
+      var d当前=e.target;
+      var dangqian=d当前.querySelectorAll('.zan')
+      for (var i = 0; i < dangqian.length; i++) {
+           var d=dangqian[i]
+           if (kaiguan) {
+               var zhi2=parseInt(d.innerHTML.slice(2).slice(0,-1))+1
+              d.innerHTML='赞('+zhi2+')'
+              kaiguan=false
+         }else{
+           var zhi3=parseInt(d.innerHTML.slice(2).slice(0,-1))-1
+              d.innerHTML='赞('+zhi3+')'
+              kaiguan=true;
+         }
+             
+
+      };
+    
+        }
+
+  })()
+ 
+
+</script>
+</html>

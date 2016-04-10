@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style >
+    .da{
+    	margin: auto;
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	bottom: 0;
+    	right: 0;
+    	width: 320px;
+    	height: 500px;
+    	border: 1px solid #000;
+
+    }
+    .xiao{
+    	width: 50px;
+    	height: 50px;
+    	background: #10ff10;
+    	cursor: pointer;
+    	float: left;
+    	margin-right: 20px;
+    	margin-top: 20px;
+    }
+    .zan{
+    	width: 20px;
+    	height: 20px;
+    	border: 1px solid #ff1030;
+    	float: left;
+
+    }
+    .cai{
+    	width: 20px;
+    	height: 20px;
+    	border: 1px solid #ff1030;
+    	float: right;
+    }
+  .pinglun{
+    	width: 20px;
+    	height: 20px;
+    	border: 1px solid #ff1030;
+    	float: left;
+
+    }
+    .jubao{
+    	width: 20px;
+    	height: 20px;
+    	border: 1px solid #ff1030;
+    	float: right;
+    }
+
+	</style>
+</head>
+<body>
+	<div class="da">
+		<div class="xiao">
+		<div class="zan">赞</div>
+		<div class="cai">踩</div>
+		<div class="pinglun">评</div>
+		<div class="jubao">举</div>
+
+		</div>
+	</div>
+	
+</body>
+<script >
+var da=document.querySelector('.da')
+	document.ondblclick=function(){
+		var el=document.createElement('div')
+
+        el.classList.add('xiao')
+        // el.innerHTML=(Math.floor(Math.random()*20))   
+         el.innerHTML=('<div class="zan">赞</div><div class="cai">踩</div><div class="pinglun">评</div><div class="jubao">举</div>')   
+		da.appendChild(el)
+
+	}
+	var zanhandle=function(e){
+         this.style.backgroundColor='red';
+         console.dir(e.target,this)
+	}
+	var caihandle=function(e){
+         this.style.backgroundColor='red';
+           console.log(e.target,this)
+	}
+	var pinglunhandle=function(e){
+         this.style.backgroundColor='red';
+	}
+	var jubaohandle=function(e){
+         this.style.backgroundColor='red';
+	}
+	da.onclick=function(e){
+		// var el=e.target;
+		// // console.log(el)
+		// if (el==this) {return}else{
+		// 	alert(el.innerHTML)
+		// }
+		var el=e.target
+		if (el.classList.contains('zan')) {
+			zanhandle.call(el,e)
+		}
+		else if (el.classList.contains('cai')) {
+			caihandle.call(el,e)
+		}
+		else if (el.classList.contains('pinglun')) {
+			pinglunhandle.call(el,e)
+		}
+		else if (el.classList.contains('jubao')) {
+			jubaohandle.call(el,e)
+		}
+		
+	}
+
+</script>
+</html>

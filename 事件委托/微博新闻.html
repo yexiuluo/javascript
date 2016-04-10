@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新浪微博</title>
+	<style >
+      .tip{
+      	width: 320px;
+      	border: 3px dashed #ff1010;
+      	margin: 0 auto;
+      	text-align: center;
+        cursor: pointer;
+
+      }
+      .contain{
+      	width: 320px;
+      
+      	margin: auto;
+      /*	position: absolute;
+      	left: 0;
+      	top: 147px;
+      	right: 0;
+      	bottom: 0;*/
+      position: absolute;
+      top :149px;
+      left:519px;
+
+      }
+        .feeds{
+     	width: 320px;
+         height: 200px;
+     	border: 1px solid #000;
+     	/*margin: auto;
+     	position: absolute;
+     	left: 0;
+     	top: 0;
+     	bottom: 0;
+     	right: 0;*/
+     	
+          overflow: auto;
+          position: relative;
+     }
+     .feed{
+     cursor:pointer;
+     	border: 1px solid red;
+     }
+     .active{
+     	background: #20ff20;
+     	color: #000;
+
+     }
+     .loading{
+     	width: 320px;
+     	height: 200px;
+     	background: #80ff80;
+     	position: absolute;
+     	top :149px;
+     	left:519px;
+     	line-height: 200px;
+     	text-align: center;
+     	font-size: 25px;
+     	display: block;
+     }
+     #wb{
+           position: absolute;
+      top :50px;
+      left:519px;  
+     }
+     #fb{
+      background-color: #fff;
+                 position: absolute;
+      top:129px;
+      left:795px; 
+     }
+     .fb{
+      background-color: #ccc;
+                 position: absolute;
+      top:129px;
+      left:795px; 
+     }
+
+     .zhishu{
+             position: absolute;
+      top:129px;
+      left:519px;  
+     }
+	</style>
+</head>
+<body>
+	<div class="tip"><marquee> 你有5条新浪微博</marquee></div>
+  <textarea name="wenben" rows="5" cols="42" id="wb" value=''></textarea><span class='zhishu' >还可以输入140字</span>
+  <input type="submit" name="fabu" value="发布" id="fb">
+	<div class="contain">
+		<div class="feeds">
+		
+
+	</div>
+
+
+	</div>
+	<div class="loading">loading····</div>
+</body>
+<script >
+var contain=document.querySelector('.contain')
+var loading=document.querySelector('.loading')
+var feeds=document.querySelector('.feeds')
+    var data=[
+       {name:'lisi',neirong:'今天的作业不咋会',like:20},
+       {name:'wangwu',neirong:'今天的作业不咋会',like:220}
+
+    ]
+    var aa=function () {
+          loading.style.display='none';  
+          for (var i = 0,el; i < data.length; i++) {
+                el=document.createElement('div')
+                var dd=data[i]
+                el.innerHTML='<span>'+dd.name+'</span><p>'+dd.neirong+'</p><span class=zan>赞('+dd.like+')</span>'
+                	el.classList.add('feed') 
+
+            	feeds.insertBefore(el,feeds.firstElementChild)	
+
+            	}
+            // var input=document.createElement('input')
+            // // input.
+            // feeds.insertBefore(input,contain.firstElementChild)
+
+
+            
+    }
+	setTimeout(aa,2000)
+	       var zanhandle=function(e){
+          	   
+              
+                if (this.classList.contains('active')) {
+                	 num1=parseInt(this.innerHTML.slice(2).slice(0,-1))-1
+                	 this.innerHTML='赞('+num1+')'
+                	  this.classList.toggle('active')
+
+                
+                }else{
+                	num=parseInt(this.innerHTML.slice(2).slice(0,-1))+1
+                    this.innerHTML='赞('+num+')'
+                     this.classList.toggle('active')
+
+                }
+
+
+
+          }
+         feeds.onclick=function(e){
+           var el=e.target
+           if (el.classList.contains('zan')) {
+               zanhandle.call(el,e)
+           };
+         }
+         //随机取出数组中的5个对象
+	  var arr=[
+          {name:'孙跃伟',neirong:'今天的作业不咋会',like:20},
+       {name:'分割线',neirong:'我是分割线',like:220},
+        {name:'柳鸣',neirong:'我乃下界第一人',like:20},
+       {name:'大黑狗',neirong:'天下第一狗神',like:220},
+        {name:'叶凡天帝',neirong:'大帝第一人',like:20},
+       {name:'荒天帝',neirong:'一剑断万古',like:220}
+    ]
+     var shuju=[]
+	 for (var i = 0; i < 5; i++) {
+	 	  shuju.push(arr[Math.floor(Math.random()*5)])	  
+	 };
+// console.log(shuju[4])
+    
+    
+
+  
+    //点击添加5条消息
+    var tip=document.querySelector('.tip')
+    var kaiguan=true;
+  
+     tip.onclick=function(){
+     	  if (kaiguan) {
+     	for (var i = 0,el; i < shuju.length; i++) {
+      el=document.createElement('div')
+      el.innerHTML='<span>'+shuju[i].name+'</span><p>'+shuju[i].neirong+'</p><span class="zan">赞('+shuju[i].like+')</span>'
+
+      el.classList.add('feed')
+      feeds.insertBefore(el,feeds.firstElementChild)
+       tip.innerHTML='你目前没有未读信息'
+       
+    
+     }
+    
+       kaiguan=false;
+    }
+   
+  }
+  var wenben=document.querySelector('#wb')
+  
+  var fabu=document.querySelector('#fb')
+  var zhishu=document.querySelector('.zhishu')
+  
+  var num1=parseInt(zhishu.innerHTML.slice(5,8))
+  // console.log(wenben.value.length)
+ 
+    
+   wenben.onkeyup=function(){
+    var x=wenben.value.length;
+   
+       if (x==0) {
+        fabu.classList.remove('fb')
+       fabu.classList.add('fb1');
+      
+  }else{
+        zhishu.innerHTML='还可以输入'+(140-x)+'字'
+      
+        fabu.onclick=function(){
+         
+     var el=document.createElement('div')
+   el.classList.add('feed')
+   el.innerHTML='<span>'+'我'+'</span><p>'+wenben.innerHTML+wenben.value+'</p><span class="zan">赞('+'0'+')</span>'
+    feeds.insertBefore(el,feeds.firstElementChild)
+       
+
+  }
+
+  }
+   } 
+
+
+
+ 
+   
+
+  
+
+    
+</script>
+</html>

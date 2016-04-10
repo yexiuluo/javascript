@@ -8,12 +8,11 @@ body{
    font-size: 12px;
    color:#666;
 }
-/*顶部banner开始*/
 .top{
 	width: 100%;
 	height: 35px;
 	float: left;
-	background-color: #eee;
+	/*background: yellow;*/
 	position: relative;
 }
 .top-left{
@@ -177,153 +176,4 @@ body{
     background-position: -175px -110px;
     background-repeat:no-repeat;
 }
-/*顶部结束*/
-/*顶部banner开始*/
-.wdb{
-	width:100%;
-	height:80px;
-	float: left;
-	background: red;
-	margin-top: 1px;
-	background-color: #9b003f;
-
-
-}
-.db{
-	width: 100%;
-	height: 80px;
-	float: left;
-	background: yellow;
-	min-height: 80px;
-	/*position: relative;*/
-}
-.db a{
-	display: block;
-	width: 100%;
-	height: 80px;
-	background-image: url(../image/dbbanner.jpg);
-	background-position: -283px 0px;
-	
-}
-
-
-/*顶部banner结束*/
-/*搜索开始*/
-.wsousuo{
-	width: 100%;
-	height: 120px;
-	float: left;
-	/*background: yellow;*/
-}
-.sousuo{
-	width:1190px;
-	height: 120px;
-	margin: 0 auto;
-	background: yellow;
-	
-
-}
-.logo{
-	width: 215px;
-	height: 76px;
-	float: left;
-	margin-top: 21px;
-	background: red;
-
-}
-.logo a{
-	display: block;
-overflow: hidden;
-width: 215px;
-height: 76px;
-text-indent: -999px;
-background: #eee url(../image/top/log.gif) 0 0 no-repeat;
-}
-.type{
-	width: 145px;
-	height: 80px;
-	float: left;
-	margin-top: 18px;
-	overflow: hidden;
-	/*background: red;*/
-}
-.line{
-	float: left;
-    height: 70px;
-    margin:6px 10px 0;
-    border-left: 1px solid #efefef;
-
-
-}
-.type a{
-	/*display: block;*/
-float: left;
-width: 120px;
-height: 80px;
-background: url(../image/top/type1.gif) no-repeat scroll 0px 0px;
-}
-.minicart{
-	width: 160px;
-	height: 34px;
-	float: right;
-	margin:40px 0 0 18px ;
-	position: relative;
-	z-index: 402;
-	background: red;
-
-}
-.minicart a{
-	display: block;
-	width: 160px;
-	height: 34px;
-	background:#323333 url(../image/top/小图标.png) -55px  -76px no-repeat;
-
-}
-.minicart span {
-    float: left;
-    height: 34px;
-    line-height: 34px;
-    padding-left: 48px;
-    color: #fff;
-}
-.minicart strong {
-    padding: 0 5px;
-    font: 400 16px/34px Arial;
-    color: #e5004f;
-    vertical-align: middle;
-}
-.minicart b{
-	float: right;
-margin-right: 20px;
-margin-top: 16px;
-width: 7px;
-height: 4px;
-overflow: hidden;
-background: url(../image/top/小图标.png) -189px -111px no-repeat;
-} 
-
-
-.search{
-	width:498px;
-	height: 34px;
-	float: right;
-	margin-top: 40px;
-	position: relative;
-	z-index: 401;
-	background: red;
-}
-.searb{
-	width: 494px;
-	height: 30px;
-	margin-bottom: 8px;
-	border: 2px solid #323333;
-
-}
-.hotzi{
-	width: 498px;
-height: 18px;
-overflow: hidden;
-}
-
-/*搜索结束*/
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托盒子</title>
+   <style type="text/css">
+    .da{
+        width: 500px;
+        height: 500px;
+        border: 1px solid #10bb20;
+        margin: 0 auto;
+        padding: 5px;
+    }
+    .xiao{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #bb2020;
+        float: left;
+        padding: 3px;
+    }
+    .zan{
+        width: 30px;
+        height: 30px;
+        border: 1px solid #1010bb;
+        float: left;
+        line-height: 30px;
+    }
+     .cai{
+        width: 30px;
+        height: 30px;
+        border: 1px solid #1010bb;
+        float: left;
+         line-height: 30px;
+    }
+     .ping{
+      width: 30px;
+        height: 30px;
+        border: 1px solid #1010bb;
+        float: left;
+         line-height: 30px;
+    }
+     .bao{
+        width: 30px;
+        height: 30px;
+        border: 1px solid #1010bb;
+        float: left;
+        line-height: 30px;
+    }
+   </style>
+</head>
+<body>
+    <div class="da">
+        <div class="xiao">
+            <div class="zan">赞</div>
+            <div class="cai">踩</div>
+            <div class="ping">评</div>
+            <div class="bao">报</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var da = document.querySelector('.da')
+   
+    da.ondblclick=function(){
+        var el=document.createElement('div')
+        el.classList.add('xiao')
+        el.innerHTML='<div class="zan">赞</div><div class="cai">踩</div><div class="ping">评</div><div class="bao">报</div>'
+        da.appendChild(el)
+    }
+
+       
+     var zanhandel=function(e){
+        this.style.backgroundColor='#1050ff';
+     }
+       var caihandel=function(e){
+        this.style.backgroundColor='#1050ff';
+     }
+       var pinghandel=function(e){
+        this.style.backgroundColor='#1050ff';
+     }
+       var baohandel=function(e){
+        this.style.backgroundColor='#1050ff';
+     }
+
+    da.onclick=function(e){
+
+       var el=e.target;
+       // console.log(el)
+       if (el.classList.contains('zan')) {
+        zanhandel.call(el,e)
+       }
+       else if (el.classList.contains('cai')) {
+        caihandel.call(el,e)
+       }
+       else if (el.classList.contains('ping')) {
+        pinghandel.call(el,e)
+       }
+       else if (el.classList.contains('bao')) {
+        baohandel.call(el,e)
+       }
+    }
+</script>
+</html>

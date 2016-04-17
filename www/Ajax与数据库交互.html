@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style >
+    ul,li,h3{
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+    }
+    ul li{
+    	display: inline-block;
+     padding: 10px 30px;
+     background: #aa8080;
+     color: white;
+     cursor: pointer;
+
+    }
+    h4{
+    	font-weight: bolder;
+    	padding: 10px;
+    }
+    pre{
+      border: 1px solid red;
+      padding: 30px;
+    }
+
+	</style>
+</head>
+<body>
+	<ul>
+	<li>从文件系统中取数据</li>
+		<li>从数据库取数据</li>
+		<li>从数据库删除数据</li>
+		<li>更新数据库中的数据</li>
+		<li>给数据库中新增一条数据</li>
+	</ul>
+	<h4 >以下为服务器返回的结果</h4>
+	<pre class="result"></pre>
+</body>
+<script >
+	var $ = {};
+	//给浏览器不链接添加内容的函数
+	$.ajax = function  (url,callback) {
+		var xhr = new XMLHttpRequest();
+	
+    	xhr.open('get',url,true);
+		xhr.send();
+	    xhr.addEventListener('readystatechange',function(){
+		if (this.readyState!==4) {
+			return;
+		}
+
+		if (this.status===200||this.status===304) {
+			callback(this.response)
+		};
+		// console.dir(this.readyState)
+		
+	   })
+
+  
+	}
+	var $ul = document.querySelector('ul')
+	console.log($ul)
+	var $pre = document.querySelector('pre')
+	$ul.children[0].addEventListener('click',function(){
+		$.ajax('/robot.txt',function(data){
+			$pre.innerHTML = data;
+		})
+	})
+	$ul.children[1].addEventListener('click',function(){
+		$.ajax('/huoqulianxiren.php',function(data){
+			$pre.innerHTML=data;
+		})
+	})
+    $ul.children[2].addEventListener('click',function(){
+    	$.ajax('/shanchu.php?id=4',function(){
+    		console.log('success')
+    	})
+    })
+    $ul.children[3].addEventListener('click',function(){
+    	$.ajax('/gengxing.php?id=5&shuxing=phone&zhi='+Math.random()*100,function(data){
+    		console.log(data)
+    	})
+    })
+</script>
+</html>

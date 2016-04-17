@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>这是新的天猫</h1>
+	<h3>........</h3>
+	<!-- <img src="a.png"> -->
+</body>
+<script type="text/javascript">
+//Ajax中同步和异步的概念
+	// var xml = new XMLHttpRequest()
+	// xml.addEventListener('readystatechange',function(){
+	// 	if (this.readyState!==4) {
+	// 		return;
+	// 	}
+
+	// 	if (this.status===200||this.status===304) {
+	// 		document.body.innerHTML += xml.response;
+	// 	};
+	// 	// console.dir(this.readyState)
+		
+	// })
+	// xml.open('get','/robot.txt',true)
+	// xml.send()
+    
+
+    var ajax=function(url,callback){
+    	var xhr = new XMLHttpRequest()
+	xhr.addEventListener('readystatechange',function(){
+		if (this.readyState!==4) {
+			return;
+		}
+
+		if (this.status===200||this.status===304) {
+			callback(this.response)
+		};
+		// console.dir(this.readyState)
+		
+	})
+	xhr.open('get',url,true)
+	xhr.send()
+    }
+
+	ajax('/students.json',function(data){
+		console.log(JSON.parse(data))
+	})
+	
+</script>
+</html>

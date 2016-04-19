@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script >
+     // javascript中构建一个对象的三种方式
+     // 1.字面量的形式
+     // var obj = {
+     // 	'a':'12',
+     // 	'b'：'234'，
+     // }
+     // 以字面量的形式创建出的对象，原型就是Object.prototype 这个对象
+     // 2.构造函数
+     // var obj2= new Object()
+     // 3.利用 Object.create()方法
+     // 从一个已有的对象开始构建新的对象
+     var mao = {
+     	zhuazi:4,
+     	erduo:1,
+     	nao:function(){
+              console.log('nao nao nao');
+     		
+     	}
+  
+     	}
+     	var bosimao = Object.create(mao);
+     	bosimao.dianjiaojian = function(){
+     		console.log(1)
+     	}
+     	console.dir(bosimao)
+
+     	//4.用new关键字构造对象；
+        var mao =function(){
+        	this.zhuazi = 4;
+        	this.erduo = 1;
+
+        }
+        var bosimao = new mao()
+        每一个函数对象身上都有一个其他对象不具备的属性，叫做
+        1.构建一个空对象{}
+        2.把mao那个函数作为这个空对象的临时方法调用了一次
+        // {zhuazi:4,erduo:1}
+        3.把mao那个函数对象身上的prototype那个属性拿来，作为自己原型链中的一条
+        4.返回最终对象；
+
+        ##实现原理
+        DOM对象
+        ```javacript
+
+var el = {
+	offsetWidth:12,
+	_proto_:(HTMLDivElement)
+	title:'aa',
+	 _proto_:HTMLElement
+	 src:'xxx.png'
+	  _proto_:Element
+	  getAttribute:fn,
+	   _proto_:Node
+	   nodeName:'IMG',
+	    _proto_
+
+}
+  ````
+DOM集合
+```javacript
+    var els{
+    	0:el,
+    	1:el,
+    	2:el,
+    	3:el,
+    	length:4,
+    	_proto_:(并没有多少价值的方法和对象)
+
+ 
+    }
+       ````
+   jQuery对象    
+      ```javacript
+      var jQuery={
+      	0:div,
+          1:div,
+          2:div,
+          3:div,
+          length:4,
+          _proto_:
+          addClass:fn,
+          removeClass:fn,
+          toggleClass:fn,
+          css:fn,
+          prop:fn
+          ····
+
+      }
+
+      `````
+      jQuery 是一个 javascript库
+      库可以简单理解成一堆以某种方式组织起来的，方便，易用的函数集合
+      jQuery库的优点
+      1 全面解决PC端的兼容性问题
+      2 语法精炼，性能好，插件非常多
+      jQuery版本号之间的区别
+      1.xx -> 1.12 支持ie8
+      2.0          彻底的放弃了对ie<10的支持，转向移动端
+
+
+      ##jQuery原理
+     
+      1.new 的时候究竟发生了什么
+      先创建一个空对象，
+      然后把旧对象的方法当成一个临时方法给了空对象;
+      将旧对象的原型链拿来放空对象身上;
+      返回最终对象;
+
+      2.对象的原型链
+      3.函数对象身上一个属性(prototype)和一个方法（call）
+      4.this的指向
+
+      ```javacript
+      (function(){
+      	var jQuery =function(selector){
+              var els = document.querySelectorAll(selector)
+              for (var i = 0; i < els.length; i++) {
+              	this[i]=els[i]
+              };
+              this.length=els.length
+
+      	}
+      	jQuery.prototype.addClass=function(str){
+      		for (var i = 0; i < this.length; i++) {
+      			this[i].classList.add(str)
+      		};
+      	}
+
+       var _j=function(selector){
+       	return new jQuery(selector)
+       }
+
+       window.$= _j 
+
+
+      })()
+      ````````````
+      $函数能接受的参数类型以及对应的返回值
+      *null jQuery对象
+      *数组，对象
+      *选择器
+      *HTML标签
+      *DOM对象
+      *DOM集合
+      *函数
+	</script>
+</body>
+</html>

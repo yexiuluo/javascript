@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪食蛇</title>
+	<style type="text/css">
+  ul,li{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+  }
+  .controller{
+    background: #3b3739;
+    color: white;
+    position: absolute;
+    width: 300px;
+    margin: auto;
+    top: 0;
+    left: -718px;
+    right: 0;
+    bottom:0;
+    border: 1px soild black;
+    box-sizing:border-box;
+    padding: 40px;
+  }
+  .controller input{
+    background: #3b3739;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    padding: 10px;
+   
+  }
+  .controller li{
+    display: inline-block;
+    padding: 10px 40px;
+    background: #d07d27;
+    margin: 10px 0;
+  }
+  .active{
+    background: #54931c;
+  }
+  body{
+    font-family: "微软雅黑"
+  }
+      #sense{
+      	  width: 600px;
+      	  height: 600px;
+      	  margin: auto;
+      	  top: 0;
+      	  right: 0;
+      	  bottom:0;
+      	  left: 300px;
+      	  border: 1px solid #000;
+      	  position: absolute;
+
+      }
+      .block{
+      	background: #50bb44;
+        width: 30px;
+        height: 30px;
+        margin: 0 1px 1px 0;
+        float: left;
+     /* border: 1px solid black;
+*/
+
+      }
+      .snake{
+      	background: green;
+      }
+      .shiwu{
+      	background: #50bbbb;
+      }
+	</style>
+</head>
+<body>
+<div class="controller">
+  
+  <input placeholder='请输入5-40行数' id="hangxuanze" type="text">
+  <ul>
+    <li data-row="15">15x15</li>
+    <li data-row="20" class="active">20x20</li>
+    <li dat-row = "30">30x30</li>
+  </ul>
+  <ul>
+    <li data-cotroll="kaishi">开始</li>
+    <li data-cotroll="zanting">暂停</li>
+    <li data-cotroll="restart">重新开始</li>
+  </ul>
+
+</div>
+<div id="sense"></div>
+<script src="./jquery工程文件/jquery-1.12.0.js"></script>
+<script>
+	$(function(){
+    //全局变量
+    var hang=20;
+    var  snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}];
+   var shiwu;
+   var timerId;
+   var fangxiang =39;
+
+    
+       //公用函数
+       var zb2id = function(x,y){
+        return x+'-'+y;
+       }
+       var fangshiwu = function(){
+        var _x = Math.floor(Math.random()*hang)
+          var _y = Math.floor(Math.random()*hang)
+          $('#'+zb2id(_x,_y)).addClass('shiwu')
+          return{x:_x,y:_y}
+       }
+       var bujing = function(){
+         hang = hang || 20;
+        var i = 0,
+        j = 0,
+        wh = Math.floor(600/hang),
+
+        sense = $('#sense');
+       
+        sense.empty();
+
+        for(;i<hang;i++){
+          for(j=0;j<hang;j++){
+          $('<div>').addClass('block').attr('id',zb2id(i,j)).width(wh-1).height(wh-1).appendTo(sense);
+          }
+        }
+        sense.width(wh*hang).height(wh*hang)
+
+       }
+       //move
+       move = function(){
+        var xintou;
+        var jiutou = snake[snake.length-1]
+        if (fangxiang === 39) {
+           xintou  =  {x:jiutou.x,y:jiutou.y+1}
+         }else if (fangxiang === 37) {
+           xintou  =  {x:jiutou.x,y:jiutou.y-1}
+         }
+         else if (fangxiang === 38) {
+            xintou  =  {x:jiutou.x-1,y:jiutou.y}
+         }
+         else if (fangxiang === 40) {
+           xintou  =  {x:jiutou.x+1,y:jiutou.y}
+         }
+         
+       //处理撞墙
+       if (xintou.x<0||xintou.x>hang-1||xintou.y<0||xintou.y>hang-1) {
+        console.log(xintou.x)
+        clearInterval(timerId)
+        alert('撞死了')
+        return;}
+        //吃食物情况
+         if(xintou.x === shiwu.x&&xintou.y ===shiwu.y){
+          console.log(shiwu)
+          snake.push(shiwu)
+          $('#'+zb2id(shiwu.x,shiwu.y)).removeClass('shiwu')
+          $('#'+zb2id(shiwu.x,shiwu.y)).addClass('snake')
+          fangshiwu()
+        }
+        else{
+          snake.push(xintou);
+        $('#'+zb2id(xintou.x,xintou.y)).addClass('snake')
+
+        var weiba = snake.shift()
+        $('#'+zb2id(weiba.x,weiba.y)).removeClass('snake')
+        }
+        
+      
+        
+       }
+
+   
+       //主题逻辑s
+         bujing()
+         shiwu=fangshiwu()
+         $('#'+zb2id(shiwu.x,shiwu.y)).addClass('shiwu')
+         snake.forEach(function(v){
+          $('#'+zb2id(v.x,v.y)).addClass('snake')
+         })
+       
+         // move
+         // setInterval
+       //事件和一些其他操作界面
+       //处理键盘
+       $(document).bind('keyup',function(e){
+              fangxiang=e.keyCode
+       })
+       //处理开始和暂停
+       $('ul li[data-cotroll]').bind('click',function(){
+        if (timerId) {return};
+        var str = $(this).attr('data-cotroll')
+        if (str === 'kaishi') {
+          timerId = setInterval(move,200)
+        }else if(str === 'zanting'){
+          clearInterval(timerId)
+        }else if(str === 'restart'){
+          clearInterval(timerId)
+
+          $('.snake').removeClass('snake')
+          $('.shiwu').removeClass('shiwu')
+          fangxiang = 40;
+          snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}]
+           snake.forEach(function(v){
+          $('#'+zb2id(v.x,v.y)).addClass('snake')
+         })
+          shiwu = fangshiwu()
+          setInterval(move,200)
+         
+        }
+       })
+       //点击选择行列
+         $('ul li[dat-row]').bind('click',function(){
+           if (timerId) {return};
+           // var row = $(this).val()
+      hang=$(this).attr('data-row')
+     
+     $('li.active').removeClass('active');
+     $(this).addClass('active')
+     
+     bujing()
+    })
+       //自定义行列
+      $('#hangxuanze').bind("keydown",function(e){
+        if (e.keyCode == 13) {
+          // var row = $(this).val()
+          hang = $(this).val();
+          if (!isNaN(Number(hang))){
+           
+         
+           alert('好好写')
+         }
+         else if (hang<5 || hang>40) {alert('正常点')}
+         else{
+           $('li.active').removeClass('active')
+             bujing()
+          $('li[data-row='+hang+']').addClass('active')
+
+         }
+       }
+      
+      
+
+       })
+      
+
+
+
+
+//画场景
+// var row = 20;
+// var sense = $('#sense')
+
+// for (var i= 0; i < row; i++) {
+// 	for (var j = 0; j < row; j++) {
+
+// 		$('<div id='+i+'-'+j+'></div')
+// 		.addClass('block')
+// 		.appendTo(sense)
+// 	};
+// };
+//  //画蛇和食物
+// 	 var snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}]
+
+// 	 snake.forEach(function(v){
+	 	
+// 	 	$('#'+v.x+'-'+v.y).addClass('snake')
+// 	 })
+
+// 	 food = function(){
+//          var _x = Math.floor(Math.random()*20)        
+//          var _y = Math.floor(Math.random()*20)
+//           // console.log(_x,_y)
+//           $('#'+_x+'-'+_y)
+//           .addClass('shiwu')
+// 	 }
+// 	 food()
+// 	 //向左
+//      move = function(){
+//      	//旧头拿出来
+//      	var jiutou = snake[snake.length-1]
+
+
+//        var xinou = $('#'+jiutou.x+'-'+(jiutou.y+1))
+//        .addClass('snake')
+
+     
+
+//      }
+//      var timerId = setInterval(move,200)
+   
+      
+
+})
+
+
+</script>	
+</body>
+</html>

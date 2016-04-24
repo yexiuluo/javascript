@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     ul{
+     	padding: 50px;
+     	border: 1px solid black;
+     	height: 500px;
+     	overflow: auto;
+     }
+     li{
+     	height: 30px;
+     	margin: 20px;
+     	border: 1px solid black;
+     }
+	</style>
+</head>
+<body>
+<ul id="test" class="test">
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+	<li class="item"></li>
+</ul>
+<ul id="t">
+	<li>1</li>
+</ul>
+<input type="checkbox">
+<input type="text">
+<ul id="ul">
+	<li>男<input type="radio">女<input type="radio"> </li><br/>
+	<li>男<input type="radio">女<input type="radio"></li>
+</ul>
+
+	<script src="./jquery工程文件/jquery-1.12.0.js"></script>
+	<script >
+       // $('#ul input:even').prop('name',function  (i) {
+       // 	return 'sex'+i
+       // })
+       //     $('#ul input:odd').prop('name',function  (i) {
+       // 	return 'sex'+i
+       // })
+       // var ren = [
+       // {'name':'yu','sex':'男'},
+       // {'name':'mao','sex':'女'}
+       // ]  
+       //  $('#ul input:even').prop('checked',function(i){
+       //     if (ren[i].sex === '男') {
+       //     	return true;
+       //     };
+       //  })
+       //    $('#ul input:odd').prop('checked',function(i){
+       //     if (ren[i].sex === '女') {
+       //     	return true;
+       //     };
+       //  })   
+       $('#ul input').prop('name',function(i){
+       	return 'sex'+Math.floor(i/2)
+       })
+        var ren = [
+       {'name':'yu','sex':'男'},
+       {'name':'mao','sex':'女'}
+     
+       ]  
+       $('#ul li').each(function(i){
+       	if (ren[i].sex === '男') {
+       		$(this).find('input:first').prop('checked',true)
+       	}
+       	else{
+       		$(this).find('input:last').prop('checked',true)
+       	}
+       })
+
+	</script>
+</body>
+</html>

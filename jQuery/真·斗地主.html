@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>真·三国无双</title>
+	<style >
+	ul,li{
+         margin: 0;
+         padding: 0;
+         border: 0;
+         list-style: none;
+	}
+      .zhuozi{
+      	position: absolute;
+      	width: 600px;
+      	height: 400px;
+      	margin: auto;
+      	top:-440px;
+      	left: 0;
+        right: 0;
+      	border:1px solid black;
+      	background: #DEB212;
+      }
+     .zuo{
+     	width: 150px;
+     	height: 600px;
+     	border:1px solid black;
+     	position: absolute;
+     	left: 50%;
+     	top: 40px;
+     	margin-left: -470px;
+     }
+     .you{
+     	width: 150px;
+     	height: 600px;
+     	border:1px solid black;
+     	position: absolute;
+     	left: 50%;
+     	top: 40px;
+     	margin-left: 320px;
+     }
+     .zhong{
+     	width: 600px;
+     	height: 249px;
+     	position: absolute;
+     	border: 1px solid black;
+     	margin: auto;
+     	left: 0;
+     	right: 0;
+     	top: 460px;
+     }
+
+     .zhuozi .pai{
+     	width: 150px;
+     	height: 250px;
+     	border:1px solid black;
+     	position: absolute;
+     	left: 225px;
+     	top:75px;
+     	/*background: #0F1F9B;*/
+     	opacity: 0;
+     }
+     .zuo .pai{
+         height: 31px;
+         width: 100%;
+         border: 1px solid black;
+     }
+     .you .pai{
+     	 height: 31px;
+         width: 100%;
+         border: 1px solid black;
+     }
+     .zhong .pai{
+
+     	width: 31px;
+     	height: 100%;
+     	border: 1px solid black;
+        float: left;
+     	
+     }
+     .hongtao{
+     	background: #D30508;
+     }
+     .heitao{
+     	background: #291C6C;
+     }
+     .meihua{
+     	background: #29E3E0;
+     }
+     .fangkuai{
+     	background: #BC891A;
+     }
+	</style>
+</head>
+<body>
+<div class="zhuozi"></div>
+<ul>
+	<li class="zuo"></li>
+	<li class="zhong"></li>
+	<li class="you"></li>
+
+</ul>
+<script src="./jquery工程文件/jquery-1.12.0.js"></script>
+	<script>
+$(function(){
+        var poker,Ace,
+        zhuozi = $('.zhuozi'),
+        zuo = $('.zuo'),
+        zhong = $('.zhong'),
+        you = $('.you');
+        // pai = $('.pai');
+        // console.log(pai)
+ var generatePoker  = function(){
+    var r = [];
+    var color
+ 	return [
+       {huase:'hongtao',shuzi:3},
+       {huase:'meihua',shuzi:6},
+       {huase:'heitao',shuzi:5},
+       {huase:'hongtao',shuzi:13},
+       {huase:'meihua',shuzi:1},
+       {huase:'heitao',shuzi:12}
+
+
+ 	]
+ }
+poker = generatePoker();
+
+var fapai = function(){
+    zhuozi.children().each(function(i,v){
+    	var target , off;
+    	if (i%3 === 0) {
+             target = zuo;
+             off={left:'-=150',width:'-=10',opacity:0}
+    	}
+    	if (i%3 === 1) {
+             target = zhong;
+             off={top:'+=150',width:'-=10',opacity:0}
+    	}
+        if (i%3 === 2) {
+             target = you;
+             off={left:'+=150',width:'-=10',opacity:0}
+    	}
+         
+           // console.log($(v))
+         $(this)
+         
+         .animate(off,400)
+         .delay(200*i)
+         .queue(function(){
+             
+         	$(this)
+            .animate({opacity:1},0,function(){
+                $(this).appendTo(target)
+            })
+            
+         })
+         .dequeue()
+
+    })
+}
+
+var fangpai =function(){
+	 Ace = {1:'A',2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:'J',12:'Q',13:'K'}
+     $(poker).each(function(i,v){
+             $('<div>')
+             .addClass('pai '+v.huase)
+             .text(Ace[v.shuzi]) 
+             .appendTo(zhuozi)
+             .delay(300*i)
+             .animate({opacity:1},300,function(){
+             	if (i === poker.length-1) {
+             		$(document).on('dblclick',fapai)
+             	};
+             })
+
+     }) 
+}
+
+
+
+zhuozi
+.animate({top:40},500)
+.animate({width:'toggle',height:'toggle'},400)
+.animate({width:'toggle',height:'toggle'},400)
+.animate({left:'-=60'},200)
+.animate({left:'+=60'},200)
+.queue(fangpai)
+.dequeue()
+
+
+
+
+
+
+
+})
+	 </script>
+</body>
+</html>

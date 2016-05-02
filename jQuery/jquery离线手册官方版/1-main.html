@@ -8,52 +8,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="title" content="jQuery Cheat Sheet">
     <link rel="stylesheet" href="./styles.css">
-    <script src="../jquery工程文件/jquery-1.12.0.js"></script>
-    <script >
-     $(function(){
-     $('.not-full input').bind('keydown',function(e){
-        $('.main-content ')
-         .css('color','black')
-                   if (e.keyCode!=13) {
-          return
-         }
-         var zhi = $(this).val()
-         console.log(zhi)
-         $('.main-content a:contains('+zhi+')')
-         .css('color','blue')
-        })
-      //给所有的h2加点击显示隐藏
-
-       $('.main-content').on('click','h2',function(){
-
-       var self = this;
-       $(self).next().toggle(400,function(){
-
-        $(self).toggleClass('h2-active')
-        // if ($(self).next().css('display') === 'none') {
-        //   $(self).before('<span>!</span>')
-        // }else{
-        //   $(self).prev().remove()
-        // }
-       })
-
-     })  
-     //选择框淡入淡出
-       //  $('.main-content').on('click','h2',function(){
-       //    var fn = $('.xuanze input:radio:checked').val()
-       //      $(this).next()[fn](5000)
-       //  })
-       //  //h1,鼠标移上移下消失隐藏
-       // $('article >div:gt(0)').hide()
-       // $('.main-content').on('mouseenter mouseleave','h1',function(){
-       //    $(this).next().finish().slideToggle(2000)
-       // })
-
-//改变奇偶行颜色
-   $('li:nth-child(2n+1)').css({background:'white'})
-$('li:nth-child(2n)').css({background:'#ccc'})
-})
-    </script>
   </head>
 
   <body>
@@ -1072,10 +1026,6 @@ $('li:nth-child(2n)').css({background:'#ccc'})
         About...
       </a>
     </header>
-    <div class="xuanze">
-   普通 <input type="radio" name="x" class="xxx" value="toggle">
-   渐入渐出 <input type="radio" name="x" class="xxx" value="fadeToggle">
-   上下缩放 <input type="radio" name="x" class="xxx" value="slideToggle"> </div>
     <div class="main-content">
       <article id="selectors" class="selectors">
         <h1>
@@ -1089,32 +1039,32 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 all-selector" title="选择所有元素" href="https://api.jquery.com/all-selector/"
+                  <a class="v1-0 all-selector" title="Selects all elements." href="./all-selector.html"
                   data-src="">
                     *
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 class-selector" title="由给的class名选取所有元素."
-                  href="https://api.jquery.com/class-selector/" data-src="">
+                  <a class="v1-0 class-selector" title="Selects all elements with the given class."
+                  href="./class-selector.html" data-src="">
                     .class
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 element-selector" title="选取给定tag name的所有元素."
-                  href="https://api.jquery.com/element-selector/" data-src="">
+                  <a class="v1-0 element-selector" title="Selects all elements with the given tag name."
+                  href="./element-selector.html" data-src="">
                     element
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 id-selector" title="通过给的id名选择一个单一的元素."
-                  href="https://api.jquery.com/id-selector/" data-src="">
+                  <a class="v1-0 id-selector" title="Selects a single element with the given id attribute."
+                  href="./id-selector.html" data-src="">
                     #id
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 multiple-selector" title="选取所有指定选择器的组合结果."
-                  href="https://api.jquery.com/multiple-selector/" data-src="">
+                  <a class="v1-0 multiple-selector" title="Selects the combined results of all the specified selectors."
+                  href="./multiple-selector.html" data-src="">
                     selector1, selectorN, ...
                   </a>
                 </li>
@@ -1126,32 +1076,26 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 child-selector" title="
-                  选取指定所有直接的孩子元素
-                 "
-                  href="https://api.jquery.com/child-selector/" data-src="">
+                  <a class="v1-0 child-selector" title="Selects all direct child elements specified by 'child' of elements specified by 'parent'."
+                  href="./child-selector.html" data-src="">
                     parent &gt; child
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 descendant-selector" title="Selects all elements that are descendants of a given ancestor."
-                  href="https://api.jquery.com/descendant-selector/" data-src="">
+                  href="./descendant-selector.html" data-src="">
                     ancestor descendant
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 next-adjacent-Selector" title="
-                  相邻一个选择器
-                  Selects all next elements matching 'next' that are immediately preceded by a sibling 'prev'."
-                  href="https://api.jquery.com/next-adjacent-Selector/" data-src="">
+                  <a class="v1-0 next-adjacent-Selector" title="Selects all next elements matching 'next' that are immediately preceded by a sibling 'prev'."
+                  href="./next-adjacent-Selector.html" data-src="">
                     prev + next
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 next-siblings-selector" title="
-                  相邻所有选择器
-                  Selects all sibling elements that follow after the 'prev' element, have the same parent, and match the filtering 'siblings' selector."
-                  href="https://api.jquery.com/next-siblings-selector/" data-src="">
+                  <a class="v1-0 next-siblings-selector" title="Selects all sibling elements that follow after the 'prev' element, have the same parent, and match the filtering 'siblings' selector."
+                  href="./next-siblings-selector.html" data-src="">
                     prev ~ siblings
                   </a>
                 </li>
@@ -1163,106 +1107,80 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-2 animated-selector" title="
-                   所有正在执行jquery动画的元素
-                  Select all elements that are in the progress of an animation at the time the selector is run."
-                  href="https://api.jquery.com/animated-selector/" data-src="">
+                  <a class="v1-2 animated-selector" title="Select all elements that are in the progress of an animation at the time the selector is run."
+                  href="./animated-selector.html" data-src="">
                     :animated
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 eq-selector" title="
-                   下标等于几的元素 从0开始
-                  Select the element at index n within the matched set."
-                  href="https://api.jquery.com/eq-selector/" data-src="">
+                  <a class="v1-0 eq-selector" title="Select the element at index n within the matched set."
+                  href="./eq-selector.html" data-src="">
                     :eq()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 even-selector" title="
-                  下标偶数元素
-                  Selects even elements, zero-indexed. See also odd."
-                  href="https://api.jquery.com/even-selector/" data-src="">
+                  <a class="v1-0 even-selector" title="Selects even elements, zero-indexed. See also odd."
+                  href="./even-selector.html" data-src="">
                     :even
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 first-selector" title="
-                  选择第一个被标记的元素
-                  Selects the first matched element."
-                  href="https://api.jquery.com/first-selector/" data-src="">
+                  <a class="v1-0 first-selector" title="Selects the first matched element."
+                  href="./first-selector.html" data-src="">
                     :first
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 gt-selector" title="
-                   选择大于参数的所有元素
-                  Select all elements at an index greater than index within the matched set."
-                  href="https://api.jquery.com/gt-selector/" data-src="">
+                  <a class="v1-0 gt-selector" title="Select all elements at an index greater than index within the matched set."
+                  href="./gt-selector.html" data-src="">
                     :gt()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2 header-selector" title="
-                  选择所有是头部的元素，像h1,h2,h3等等
-                  Selects all elements that are headers, like h1, h2, h3 and so on."
-                  href="https://api.jquery.com/header-selector/" data-src="">
+                  <a class="v1-2 header-selector" title="Selects all elements that are headers, like h1, h2, h3 and so on."
+                  href="./header-selector.html" data-src="">
                     :header
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 lang-selector" title="
-                 选择规定语言的所有元素
-                  Selects all elements of the specified language."
-                  href="https://api.jquery.com/lang-selector/" data-src="">
+                  <a class="v1-9 lang-selector" title="Selects all elements of the specified language."
+                  href="./lang-selector.html" data-src="">
                     :lang()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 last-selector" title="
-                  选择最后一个元素
-                  Selects the last matched element."
-                  href="https://api.jquery.com/last-selector/" data-src="">
+                  <a class="v1-0 last-selector" title="Selects the last matched element."
+                  href="./last-selector.html" data-src="">
                     :last
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 lt-selector" title="
-                  选择小于参数下标的所有元素
-                  Select all elements at an index less than index within the matched set."
-                  href="https://api.jquery.com/lt-selector/" data-src="">
+                  <a class="v1-0 lt-selector" title="Select all elements at an index less than index within the matched set."
+                  href="./lt-selector.html" data-src="">
                     :lt()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 not-selector" title="
-                   选择与给定选择器不匹配的所有元素
-                  Selects all elements that do not match the given selector."
-                  href="https://api.jquery.com/not-selector/" data-src="">
+                  <a class="v1-0 not-selector" title="Selects all elements that do not match the given selector."
+                  href="./not-selector.html" data-src="">
                     :not()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 odd-selector" title="
-                  奇数下标
-                  Selects odd elements, zero-indexed. See also even."
-                  href="https://api.jquery.com/odd-selector/" data-src="">
+                  <a class="v1-0 odd-selector" title="Selects odd elements, zero-indexed. See also even."
+                  href="./odd-selector.html" data-src="">
                     :odd
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 root-selector" title="
-                  选择一个是文档根的元素
-                  Selects the element that is the root of the document."
-                  href="https://api.jquery.com/root-selector/" data-src="">
+                  <a class="v1-9 root-selector" title="Selects the element that is the root of the document."
+                  href="./root-selector.html" data-src="">
                     :root
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 target-selector" title="
-                  
-                  Selects the target element indicated by the fragment identifier of the document's URI."
-                  href="https://api.jquery.com/target-selector/" data-src="">
+                  <a class="v1-9 target-selector" title="Selects the target element indicated by the fragment identifier of the document's URI."
+                  href="./target-selector.html" data-src="">
                     :target
                   </a>
                 </li>
@@ -1274,34 +1192,26 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-1-4 contains-selector" title="
-                    选择所有包含规定内容的元素
-                  Select all elements that contain the specified text."
-                  href="https://api.jquery.com/contains-selector/" data-src="">
+                  <a class="v1-1-4 contains-selector" title="Select all elements that contain the specified text."
+                  href="./contains-selector.html" data-src="">
                     :contains()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 empty-selector" title="
-                  选择所有没有任何儿子（包括text节点的）的元素
-                  Select all elements that have no children (including text nodes)."
-                  href="https://api.jquery.com/empty-selector/" data-src="">
+                  <a class="v1-0 empty-selector" title="Select all elements that have no children (including text nodes)."
+                  href="./empty-selector.html" data-src="">
                     :empty
                   </a>
                 </li>
                 <li>
-                  <a class="v1-1-4 has-selector" title="
-                 选择包含至少一个匹配规定选择器的元素们
-                  Selects elements which contain at least one element that matches the specified selector."
-                  href="https://api.jquery.com/has-selector/" data-src="">
+                  <a class="v1-1-4 has-selector" title="Selects elements which contain at least one element that matches the specified selector."
+                  href="./has-selector.html" data-src="">
                     :has()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 parent-selector" title="
-                  选择所有是任何一个元素的父元素，包括text节点
-                  Select all elements that are the parent of another element, including text nodes."
-                  href="https://api.jquery.com/parent-selector/" data-src="">
+                  <a class="v1-0 parent-selector" title="Select all elements that are the parent of another element, including text nodes."
+                  href="./parent-selector.html" data-src="">
                     :parent
                   </a>
                 </li>
@@ -1311,23 +1221,18 @@ $('li:nth-child(2n)').css({background:'#ccc'})
           <div>
             <section>
               <h2>
-              可视过滤选择
                 Visibility Filters
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 hidden-selector" title="
-                  选择所有被隐藏的元素们
-                  Selects all elements that are hidden."
-                  href="https://api.jquery.com/hidden-selector/" data-src="">
+                  <a class="v1-0 hidden-selector" title="Selects all elements that are hidden."
+                  href="./hidden-selector.html" data-src="">
                     :hidden
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 visible-selector" title="
-                  选择所有可见的元素们
-                  Selects all elements that are visible."
-                  href="https://api.jquery.com/visible-selector/" data-src="">
+                  <a class="v1-0 visible-selector" title="Selects all elements that are visible."
+                  href="./visible-selector.html" data-src="">
                     :visible
                   </a>
                 </li>
@@ -1339,74 +1244,56 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 attribute-contains-prefix-selector" title="
-                  aa||aa-xxxxx
-                  Selects elements that have the specified attribute with a value either equal to a given string or starting with that string followed by a hyphen (-)."
-                  href="https://api.jquery.com/attribute-contains-prefix-selector/" data-src="">
+                  <a class="v1-0 attribute-contains-prefix-selector" title="Selects elements that have the specified attribute with a value either equal to a given string or starting with that string followed by a hyphen (-)."
+                  href="./attribute-contains-prefix-selector.html" data-src="">
                     [name|="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 attribute-contains-selector" title="
-                   一串baac   有就行
-                  Selects elements that have the specified attribute with a value containing the a given substring."
-                  href="https://api.jquery.com/attribute-contains-selector/" data-src="">
+                  <a class="v1-0 attribute-contains-selector" title="Selects elements that have the specified attribute with a value containing the a given substring."
+                  href="./attribute-contains-selector.html" data-src="">
                     [name*="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 attribute-contains-word-selector" title="
-                  空格隔开的有         class="xx yy zz" yy 
-                  Selects elements that have the specified attribute with a value containing a given word, delimited by spaces."
-                  href="https://api.jquery.com/attribute-contains-word-selector/" data-src="">
+                  <a class="v1-0 attribute-contains-word-selector" title="Selects elements that have the specified attribute with a value containing a given word, delimited by spaces."
+                  href="./attribute-contains-word-selector.html" data-src="">
                     [name~="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 attribute-ends-with-selector" title="
-                  xxx-data yyyy-data  以什么结尾的、
-                  Selects elements that have the specified attribute with a value ending exactly with a given string. The comparison is case sensitive."
-                  href="https://api.jquery.com/attribute-ends-with-selector/" data-src="">
+                  <a class="v1-0 attribute-ends-with-selector" title="Selects elements that have the specified attribute with a value ending exactly with a given string. The comparison is case sensitive."
+                  href="./attribute-ends-with-selector.html" data-src="">
                     [name$="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 attribute-equals-selector" title="
-                  选择有确定属性值的元素们
-                  Selects elements that have the specified attribute with a value exactly equal to a certain value."
-                  href="https://api.jquery.com/attribute-equals-selector/" data-src="">
+                  <a class="v1-0 attribute-equals-selector" title="Selects elements that have the specified attribute with a value exactly equal to a certain value."
+                  href="./attribute-equals-selector.html" data-src="">
                     [name="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 attribute-not-equal-selector" title="
-                  选择没有那个属性值的元素们
-                  Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain value."
-                  href="https://api.jquery.com/attribute-not-equal-selector/" data-src="">
+                  <a class="v1-0 attribute-not-equal-selector" title="Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain value."
+                  href="./attribute-not-equal-selector.html" data-src="">
                     [name!="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 attribute-starts-with-selector" title="
-                   aabbc aa-cc aa-a1
-                  Selects elements that have the specified attribute with a value beginning exactly with a given string."
-                  href="https://api.jquery.com/attribute-starts-with-selector/" data-src="">
+                  <a class="v1-0 attribute-starts-with-selector" title="Selects elements that have the specified attribute with a value beginning exactly with a given string."
+                  href="./attribute-starts-with-selector.html" data-src="">
                     [name^="value"]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 has-attribute-selector" title="
-                   选择有规定属性的元素们，不管任何值
-                  Selects elements that have the specified attribute, with any value."
-                  href="https://api.jquery.com/has-attribute-selector/" data-src="">
+                  <a class="v1-0 has-attribute-selector" title="Selects elements that have the specified attribute, with any value."
+                  href="./has-attribute-selector.html" data-src="">
                     [name]
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 multiple-attribute-selector" title="
-                  匹配元素匹配所有指定属性的过滤器
-                  Matches elements that match all of the specified attribute filters."
-                  href="https://api.jquery.com/multiple-attribute-selector/" data-src="">
+                  <a class="v1-0 multiple-attribute-selector" title="Matches elements that match all of the specified attribute filters."
+                  href="./multiple-attribute-selector.html" data-src="">
                     [name="value"][name2="value2"]
                   </a>
                 </li>
@@ -1418,82 +1305,62 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-1-4 first-child-selector" title="
-                  选择所有元素,是父母的第一个孩子。
-                  Selects all elements that are the first child of their parent."
-                  href="https://api.jquery.com/first-child-selector/" data-src="">
+                  <a class="v1-1-4 first-child-selector" title="Selects all elements that are the first child of their parent."
+                  href="./first-child-selector.html" data-src="">
                     :first-child
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 first-of-type-selector" title="
-                  选择所有元素的第一个兄弟姐妹中相同的元素名称
-                  Selects all elements that are the first among siblings of the same element name."
-                  href="https://api.jquery.com/first-of-type-selector/" data-src="">
+                  <a class="v1-9 first-of-type-selector" title="Selects all elements that are the first among siblings of the same element name."
+                  href="./first-of-type-selector.html" data-src="">
                     :first-of-type
                   </a>
                 </li>
                 <li>
-                  <a class="v1-1-4 last-child-selector" title="
-                   选择所有元素的最后一个孩子的父母。
-                  Selects all elements that are the last child of their parent."
-                  href="https://api.jquery.com/last-child-selector/" data-src="">
+                  <a class="v1-1-4 last-child-selector" title="Selects all elements that are the last child of their parent."
+                  href="./last-child-selector.html" data-src="">
                     :last-child
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 last-of-type-selector" title="
-                  选择所有元素的兄弟姐妹中最后一个元素名称相同
-                  Selects all elements that are the last among siblings of the same element name."
-                  href="https://api.jquery.com/last-of-type-selector/" data-src="">
+                  <a class="v1-9 last-of-type-selector" title="Selects all elements that are the last among siblings of the same element name."
+                  href="./last-of-type-selector.html" data-src="">
                     :last-of-type
                   </a>
                 </li>
                 <li>
-                  <a class="v1-1-4 nth-child-selector" title="
-                 选择所有元素nth-child的父母
-                  Selects all elements that are the nth-child of their parent."
-                  href="https://api.jquery.com/nth-child-selector/" data-src="">
+                  <a class="v1-1-4 nth-child-selector" title="Selects all elements that are the nth-child of their parent."
+                  href="./nth-child-selector.html" data-src="">
                     :nth-child()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 nth-last-child-selector" title="
-                   选择所有元素的nth-child家长,计数与第一个与最后一个元素
-                  Selects all elements that are the nth-child of their parent, counting from the last element to the first."
-                  href="https://api.jquery.com/nth-last-child-selector/" data-src="">
+                  <a class="v1-9 nth-last-child-selector" title="Selects all elements that are the nth-child of their parent, counting from the last element to the first."
+                  href="./nth-last-child-selector.html" data-src="">
                     :nth-last-child()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 nth-last-of-type-selector" title="
-                  选择所有元素的nth-child家长,计数与第一个与最后一个元素
-                  Selects all elements that are the nth-child of their parent, counting from the last element to the first."
-                  href="https://api.jquery.com/nth-last-of-type-selector/" data-src="">
+                  <a class="v1-9 nth-last-of-type-selector" title="Selects all elements that are the nth-child of their parent, counting from the last element to the first."
+                  href="./nth-last-of-type-selector.html" data-src="">
                     :nth-last-of-type()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 nth-of-type-selector" title="
-                  选择所有元素是第n个孩子的父母与兄弟姐妹使用相同的元素名
-                  Selects all elements that are the nth child of their parent in relation to siblings with the same element name."
-                  href="https://api.jquery.com/nth-of-type-selector/" data-src="">
+                  <a class="v1-9 nth-of-type-selector" title="Selects all elements that are the nth child of their parent in relation to siblings with the same element name."
+                  href="./nth-of-type-selector.html" data-src="">
                     :nth-of-type()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-1-4 only-child-selector" title="
-                  选择所有元素,是父母的唯一的孩子
-                  Selects all elements that are the only child of their parent."
-                  href="https://api.jquery.com/only-child-selector/" data-src="">
+                  <a class="v1-1-4 only-child-selector" title="Selects all elements that are the only child of their parent."
+                  href="./only-child-selector.html" data-src="">
                     :only-child
                   </a>
                 </li>
                 <li>
-                  <a class="v1-9 only-of-type-selector" title="
-                  选择所有元素没有兄弟姐妹有相同的元素名称
-                  Selects all elements that have no siblings with the same element name."
-                  href="https://api.jquery.com/only-of-type-selector/" data-src="">
+                  <a class="v1-9 only-of-type-selector" title="Selects all elements that have no siblings with the same element name."
+                  href="./only-of-type-selector.html" data-src="">
                     :only-of-type()
                   </a>
                 </li>
@@ -1507,122 +1374,92 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 button-selector" title="
-                  选择所有按钮元素和元素类型的按钮
-                  Selects all button elements and elements of type button."
-                  href="https://api.jquery.com/button-selector/" data-src="">
+                  <a class="v1-0 button-selector" title="Selects all button elements and elements of type button."
+                  href="./button-selector.html" data-src="">
                     :button
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 checkbox-selector" title="
-                  选择所有类型为复选框元素
-                  Selects all elements of type checkbox."
-                  href="https://api.jquery.com/checkbox-selector/" data-src="">
+                  <a class="v1-0 checkbox-selector" title="Selects all elements of type checkbox."
+                  href="./checkbox-selector.html" data-src="">
                     :checkbox
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 checked-selector" title="
-                 匹配所有被选择的元素们
-                  Matches all elements that are checked."
-                  href="https://api.jquery.com/checked-selector/" data-src="">
+                  <a class="v1-0 checked-selector" title="Matches all elements that are checked."
+                  href="./checked-selector.html" data-src="">
                     :checked
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 disabled-selector" title="
-                  选择所有都是禁用的元素
-                  Selects all elements that are disabled."
-                  href="https://api.jquery.com/disabled-selector/" data-src="">
+                  <a class="v1-0 disabled-selector" title="Selects all elements that are disabled."
+                  href="./disabled-selector.html" data-src="">
                     :disabled
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 enabled-selector" title="
-                   选择所有元素都是激活的   
-                  Selects all elements that are enabled."
-                  href="https://api.jquery.com/enabled-selector/" data-src="">
+                  <a class="v1-0 enabled-selector" title="Selects all elements that are enabled."
+                  href="./enabled-selector.html" data-src="">
                     :enabled
                   </a>
                 </li>
                 <li>
-                  <a class="v1-6 focus-selector" title="
-                  选择目前点中的元素
-                  Selects element if it is currently focused."
-                  href="https://api.jquery.com/focus-selector/" data-src="">
+                  <a class="v1-6 focus-selector" title="Selects element if it is currently focused."
+                  href="./focus-selector.html" data-src="">
                     :focus
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 file-selector" title="
-                  选择所有文件类型的元素
-                  Selects all elements of type file."
-                  href="https://api.jquery.com/file-selector/" data-src="">
+                  <a class="v1-0 file-selector" title="Selects all elements of type file."
+                  href="./file-selector.html" data-src="">
                     :file
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 image-selector" title="
-                   选择所有图片类型的元素们
-                  Selects all elements of type image."
-                  href="https://api.jquery.com/image-selector/" data-src="">
+                  <a class="v1-0 image-selector" title="Selects all elements of type image."
+                  href="./image-selector.html" data-src="">
                     :image
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 input-selector" title="
-                  选择所有input，textarea,select 和 button 元素们
-                  Selects all input, textarea, select and button elements."
-                  href="https://api.jquery.com/input-selector/" data-src="">
+                  <a class="v1-0 input-selector" title="Selects all input, textarea, select and button elements."
+                  href="./input-selector.html" data-src="">
                     :input
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 password-selector" title="
-                  选择所有密码类型的元素们
-                  Selects all elements of type password."
-                  href="https://api.jquery.com/password-selector/" data-src="">
+                  <a class="v1-0 password-selector" title="Selects all elements of type password."
+                  href="./password-selector.html" data-src="">
                     :password
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 radio-selector" title="
-                   选择所有单选类型的元素们
-                  Selects all elements of type radio."
-                  href="https://api.jquery.com/radio-selector/" data-src="">
+                  <a class="v1-0 radio-selector" title="Selects all elements of type radio."
+                  href="./radio-selector.html" data-src="">
                     :radio
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 reset-selector" title="
-                  选择所有重置按钮的元素们
-                  Selects all elements of type reset."
-                  href="https://api.jquery.com/reset-selector/" data-src="">
+                  <a class="v1-0 reset-selector" title="Selects all elements of type reset."
+                  href="./reset-selector.html" data-src="">
                     :reset
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 selected-selector" title="
-                  选择所有被选择的元素们
-                  Selects all elements that are selected."
-                  href="https://api.jquery.com/selected-selector/" data-src="">
+                  <a class="v1-0 selected-selector" title="Selects all elements that are selected."
+                  href="./selected-selector.html" data-src="">
                     :selected
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 submit-selector" title="
-                  选择所有提交类型的元素们
-                  Selects all elements of type submit."
-                  href="https://api.jquery.com/submit-selector/" data-src="">
+                  <a class="v1-0 submit-selector" title="Selects all elements of type submit."
+                  href="./submit-selector.html" data-src="">
                     :submit
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 text-selector" title="
-                  选择所有文字类型的元素们
-                  Selects all elements of type text."
-                  href="https://api.jquery.com/text-selector/" data-src="">
+                  <a class="v1-0 text-selector" title="Selects all elements of type text."
+                  href="./text-selector.html" data-src="">
                     :text
                   </a>
                 </li>
@@ -1643,40 +1480,32 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 attr" title="
-                  获取一个属性的值的第一个元素在匹配的元素集合或设置每一个匹配的元素的一个或多个属性
-                  Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element."
-                  href="https://api.jquery.com/attr/" data-src="jQuery.fn.attr">
+                  <a class="v1-0 attr" title="Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element."
+                  href="./attr.html" data-src="jQuery.fn.attr">
                     .attr()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-6 prop" title="
-                  得到一个属性的值的第一个元素在匹配的元素集合或设置每一个匹配元素的一个或多个属性
-                  Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element."
-                  href="https://api.jquery.com/prop/" data-src="jQuery.fn.prop">
+                  <a class="v1-6 prop" title="Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element."
+                  href="./prop.html" data-src="jQuery.fn.prop">
                     .prop()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 removeAttr" title="删除每一个元素的一个属性在匹配的元素集合中."
-                  href="https://api.jquery.com/removeAttr/" data-src="jQuery.fn.removeAttr">
+                  <a class="v1-0 removeAttr" title="Remove an attribute from each element in the set of matched elements."
+                  href="./removeAttr.html" data-src="jQuery.fn.removeAttr">
                     .removeAttr()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-6 removeProp" title="
-                   删除input匹配的元素集合的属性
-                  Remove a property for the set of matched elements."
-                  href="https://api.jquery.com/removeProp/" data-src="jQuery.fn.removeProp">
+                  <a class="v1-6 removeProp" title="Remove a property for the set of matched elements."
+                  href="./removeProp.html" data-src="jQuery.fn.removeProp">
                     .removeProp()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 val" title="
-                   得到的当前值的第一个元素在匹配的元素集合或设置每一个匹配元素的值
-                  Get the current value of the first element in the set of matched elements or set the value of every matched element."
-                  href="https://api.jquery.com/val/" data-src="jQuery.fn.val">
+                  <a class="v1-0 val" title="Get the current value of the first element in the set of matched elements or set the value of every matched element."
+                  href="./val.html" data-src="jQuery.fn.val">
                     .val()
                   </a>
                 </li>
@@ -1688,49 +1517,38 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 addClass" title="
-                   给每一个匹配的元素添加一个规定的类
-                  Adds the specified class(es) to each of the set of matched elements."
-                  href="https://api.jquery.com/addClass/" data-src="jQuery.fn.addClass">
+                  <a class="v1-0 addClass" title="Adds the specified class(es) to each of the set of matched elements."
+                  href="./addClass.html" data-src="jQuery.fn.addClass">
                     .addClass()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 css" title="
-                  得到一个样式属性的值的第一个元素在匹配的元素集合或一组一个或多个CSS属性为每个匹配元素
-                  Get the value of a style property for the first element in the set of matched elements or set one or more CSS properties for every matched element."
-                  href="https://api.jquery.com/css/" data-src="jQuery.fn.css">
+                  <a class="v1-0 css" title="Get the value of a style property for the first element in the set of matched elements or set one or more CSS properties for every matched element."
+                  href="./css.html" data-src="jQuery.fn.css">
                     .css()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-4-3 jQuery-cssHooks" title="
-                  提供了一种直接钩到jQuery覆盖如何检索或设置特殊的CSS属性。在其他用途,cssHooks可用于创建自定义,browser-normalized CSS3特性的属性框阴影和梯度等Provides a way to hook directly into jQuery to override how particular CSS properties are retrieved or set. Amongst other uses, cssHooks can be used to create custom, browser-normalized properties for CSS3 features such as box-shadows and gradients."
-                  href="https://api.jquery.com/jQuery.cssHooks/" data-src="jQuery.cssHooks">
+                  <a class="v1-4-3 jQuery-cssHooks" title="Provides a way to hook directly into jQuery to override how particular CSS properties are retrieved or set. Amongst other uses, cssHooks can be used to create custom, browser-normalized properties for CSS3 features such as box-shadows and gradients."
+                  href="./jQuery.cssHooks.html" data-src="jQuery.cssHooks">
                     jQuery.cssHooks
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2 hasClass" title="
-                  遍历是否有类
-                  Determine whether any of the matched elements are assigned the given class."
-                  href="https://api.jquery.com/hasClass/" data-src="jQuery.fn.hasClass">
+                  <a class="v1-2 hasClass" title="Determine whether any of the matched elements are assigned the given class."
+                  href="./hasClass.html" data-src="jQuery.fn.hasClass">
                     .hasClass()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 removeClass" title="
-                  移除多个类
-                  Remove a single class, multiple classes, or all classes from each element in the set of matched elements."
-                  href="https://api.jquery.com/removeClass/" data-src="jQuery.fn.removeClass">
+                  <a class="v1-0 removeClass" title="Remove a single class, multiple classes, or all classes from each element in the set of matched elements."
+                  href="./removeClass.html" data-src="jQuery.fn.removeClass">
                     .removeClass()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 toggleClass" title="
-                  批量加减类
-                  Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."
-                  href="https://api.jquery.com/toggleClass/" data-src="jQuery.fn.toggleClass">
+                  <a class="v1-0 toggleClass" title="Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."
+                  href="./toggleClass.html" data-src="jQuery.fn.toggleClass">
                     .toggleClass()
                   </a>
                 </li>
@@ -1742,50 +1560,38 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 height" title="
-                  获取高度
-                  Get the current computed height for the first element in the set of matched elements or set the height of every matched element."
-                  href="https://api.jquery.com/height/" data-src="jQuery.fn.height">
+                  <a class="v1-0 height" title="Get the current computed height for the first element in the set of matched elements or set the height of every matched element."
+                  href="./height.html" data-src="jQuery.fn.height">
                     .height()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 innerHeight" title="
-                  高度加内边
-                  Get the current computed height for the first element in the set of matched elements, including padding but not border."
-                  href="https://api.jquery.com/innerHeight/" data-src="jQuery.fn.innerHeight">
+                  <a class="v1-2-6 innerHeight" title="Get the current computed height for the first element in the set of matched elements, including padding but not border."
+                  href="./innerHeight.html" data-src="jQuery.fn.innerHeight">
                     .innerHeight()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 innerWidth" title="
-                   宽度加内边
-                  Get the current computed width for the first element in the set of matched elements, including padding but not border."
-                  href="https://api.jquery.com/innerWidth/" data-src="jQuery.fn.innerWidth">
+                  <a class="v1-2-6 innerWidth" title="Get the current computed width for the first element in the set of matched elements, including padding but not border."
+                  href="./innerWidth.html" data-src="jQuery.fn.innerWidth">
                     .innerWidth()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 outerHeight" title="
-                  高度加内边加边框
-                  Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin."
-                  href="https://api.jquery.com/outerHeight/" data-src="jQuery.fn.outerHeight">
+                  <a class="v1-2-6 outerHeight" title="Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin."
+                  href="./outerHeight.html" data-src="jQuery.fn.outerHeight">
                     .outerHeight()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 outerWidth" title="
-                       高度加内边加边框
-                  Get the current computed width for the first element in the set of matched elements, including padding and border."
-                  href="https://api.jquery.com/outerWidth/" data-src="jQuery.fn.outerWidth">
+                  <a class="v1-2-6 outerWidth" title="Get the current computed width for the first element in the set of matched elements, including padding and border."
+                  href="./outerWidth.html" data-src="jQuery.fn.outerWidth">
                     .outerWidth()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 width" title="
-                  宽度
-                  Get the current computed width for the first element in the set of matched elements or set the width of every matched element."
-                  href="https://api.jquery.com/width/" data-src="jQuery.fn.width">
+                  <a class="v1-0 width" title="Get the current computed width for the first element in the set of matched elements or set the width of every matched element."
+                  href="./width.html" data-src="jQuery.fn.width">
                     .width()
                   </a>
                 </li>
@@ -1797,42 +1603,32 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-2 offset" title="
-                  相对文档坐标
-                  Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document."
-                  href="https://api.jquery.com/offset/" data-src="jQuery.fn.offset">
+                  <a class="v1-2 offset" title="Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document."
+                  href="./offset.html" data-src="jQuery.fn.offset">
                     .offset()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 offsetParent" title="
-                  获取最近的有定位的祖先元素
-                  Get the closest ancestor element that is positioned."
-                  href="https://api.jquery.com/offsetParent/" data-src="jQuery.fn.offsetParent">
+                  <a class="v1-2-6 offsetParent" title="Get the closest ancestor element that is positioned."
+                  href="./offsetParent.html" data-src="jQuery.fn.offsetParent">
                     .offsetParent()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2 position" title="
-                  获取第一个元素的当前坐标在匹配的元素集合中,相对于offset parent
-                  Get the current coordinates of the first element in the set of matched elements, relative to the offset parent."
-                  href="https://api.jquery.com/position/" data-src="jQuery.fn.position">
+                  <a class="v1-2 position" title="Get the current coordinates of the first element in the set of matched elements, relative to the offset parent."
+                  href="./position.html" data-src="jQuery.fn.position">
                     .position()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 scrollLeft" title="
-                  获取当前的水平滚动条的位置匹配的元素集合中第一个元素的水平位置或设置每一个匹配元素的滚动条。
-                  Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element."
-                  href="https://api.jquery.com/scrollLeft/" data-src="jQuery.fn.scrollLeft">
+                  <a class="v1-2-6 scrollLeft" title="Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element."
+                  href="./scrollLeft.html" data-src="jQuery.fn.scrollLeft">
                     .scrollLeft()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2-6 scrollTop" title="
-                  获取当前垂直滚动条的位置匹配的元素集合的第一个元素或设置垂直滚动条的位置对于每一个匹配的元素。
-                  Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element."
-                  href="https://api.jquery.com/scrollTop/" data-src="jQuery.fn.scrollTop">
+                  <a class="v1-2-6 scrollTop" title="Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element."
+                  href="./scrollTop.html" data-src="jQuery.fn.scrollTop">
                     .scrollTop()
                   </a>
                 </li>
@@ -1845,31 +1641,31 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-2-3 jQuery-data" title="Store arbitrary data associated with the specified element and/or return the value that was set."
-                  href="https://api.jquery.com/jQuery.data/" data-src="jQuery.data">
+                  href="./jQuery.data.html" data-src="jQuery.data">
                     jQuery.data()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2-3 data" title="Store arbitrary data associated with the matched elements or return the value at the named data store for the first element in the set of matched elements."
-                  href="https://api.jquery.com/data/" data-src="jQuery.fn.data">
+                  href="./data.html" data-src="jQuery.fn.data">
                     .data()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 jQuery-hasData" title="Determine whether an element has any jQuery data associated with it."
-                  href="https://api.jquery.com/jQuery.hasData/" data-src="jQuery.hasData">
+                  href="./jQuery.hasData.html" data-src="jQuery.hasData">
                     jQuery.hasData()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2-3 jQuery-removeData" title="Remove a previously-stored piece of data."
-                  href="https://api.jquery.com/jQuery.removeData/" data-src="jQuery.removeData">
+                  href="./jQuery.removeData.html" data-src="jQuery.removeData">
                     jQuery.removeData()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2-3 removeData" title="Remove a previously-stored piece of data."
-                  href="https://api.jquery.com/removeData/" data-src="jQuery.fn.removeData">
+                  href="./removeData.html" data-src="jQuery.fn.removeData">
                     .removeData()
                   </a>
                 </li>
@@ -1890,10 +1686,8 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 clone" title="
-                  克隆元素，但不会克隆其他信息
-                  Create a deep copy of the set of matched elements."
-                  href="https://api.jquery.com/clone/" data-src="jQuery.fn.clone">
+                  <a class="v1-0 clone" title="Create a deep copy of the set of matched elements."
+                  href="./clone.html" data-src="jQuery.fn.clone">
                     .clone()
                   </a>
                 </li>
@@ -1905,26 +1699,20 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 wrap" title="
-                  包含每一个
-                  Wrap an HTML structure around each element in the set of matched elements."
-                  href="https://api.jquery.com/wrap/" data-src="jQuery.fn.wrap">
+                  <a class="v1-0 wrap" title="Wrap an HTML structure around each element in the set of matched elements."
+                  href="./wrap.html" data-src="jQuery.fn.wrap">
                     .wrap()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2 wrapAll" title="
-                  包含所有
-                  Wrap an HTML structure around all elements in the set of matched elements."
-                  href="https://api.jquery.com/wrapAll/" data-src="jQuery.fn.wrapAll">
+                  <a class="v1-2 wrapAll" title="Wrap an HTML structure around all elements in the set of matched elements."
+                  href="./wrapAll.html" data-src="jQuery.fn.wrapAll">
                     .wrapAll()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2 wrapInner" title="
-                  包裹他的Inner
-                  Wrap an HTML structure around the content of each element in the set of matched elements."
-                  href="https://api.jquery.com/wrapInner/" data-src="jQuery.fn.wrapInner">
+                  <a class="v1-2 wrapInner" title="Wrap an HTML structure around the content of each element in the set of matched elements."
+                  href="./wrapInner.html" data-src="jQuery.fn.wrapInner">
                     .wrapInner()
                   </a>
                 </li>
@@ -1936,46 +1724,38 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 append" title="
-                  添加到最后一个子元素之后
-                  Insert content, specified by the parameter, to the end of each element in the set of matched elements."
-                  href="https://api.jquery.com/append/" data-src="jQuery.fn.append">
+                  <a class="v1-0 append" title="Insert content, specified by the parameter, to the end of each element in the set of matched elements."
+                  href="./append.html" data-src="jQuery.fn.append">
                     .append()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 appendTo" title="
-                  把接口对象作为子元素添加到某个元素中去
-                  Insert every element in the set of matched elements to the end of the target."
-                  href="https://api.jquery.com/appendTo/" data-src="jQuery.fn.appendTo">
+                  <a class="v1-0 appendTo" title="Insert every element in the set of matched elements to the end of the target."
+                  href="./appendTo.html" data-src="jQuery.fn.appendTo">
                     .appendTo()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 html" title="Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element."
-                  href="https://api.jquery.com/html/" data-src="jQuery.fn.html">
+                  href="./html.html" data-src="jQuery.fn.html">
                     .html()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 prepend" title="
-                  添加到第一个子元素之前
-                  Insert content, specified by the parameter, to the beginning of each element in the set of matched elements."
-                  href="https://api.jquery.com/prepend/" data-src="jQuery.fn.prepend">
+                  <a class="v1-0 prepend" title="Insert content, specified by the parameter, to the beginning of each element in the set of matched elements."
+                  href="./prepend.html" data-src="jQuery.fn.prepend">
                     .prepend()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 prependTo" title="
-                  添加到第一个子元素之前
-                  Insert every element in the set of matched elements to the beginning of the target."
-                  href="https://api.jquery.com/prependTo/" data-src="jQuery.fn.prependTo">
+                  <a class="v1-0 prependTo" title="Insert every element in the set of matched elements to the beginning of the target."
+                  href="./prependTo.html" data-src="jQuery.fn.prependTo">
                     .prependTo()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 text" title="Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements."
-                  href="https://api.jquery.com/text/" data-src="jQuery.fn.text">
+                  href="./text.html" data-src="jQuery.fn.text">
                     .text()
                   </a>
                 </li>
@@ -1987,34 +1767,26 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 after" title="
-                    添加到自己之后
-                  Insert content, specified by the parameter, after each element in the set of matched elements."
-                  href="https://api.jquery.com/after/" data-src="jQuery.fn.after">
+                  <a class="v1-0 after" title="Insert content, specified by the parameter, after each element in the set of matched elements."
+                  href="./after.html" data-src="jQuery.fn.after">
                     .after()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 before" title="
-                   添加到自己之前
-                  Insert content, specified by the parameter, before each element in the set of matched elements."
-                  href="https://api.jquery.com/before/" data-src="jQuery.fn.before">
+                  <a class="v1-0 before" title="Insert content, specified by the parameter, before each element in the set of matched elements."
+                  href="./before.html" data-src="jQuery.fn.before">
                     .before()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 insertAfter" title="
-                   把接口对象作为兄弟元素添加到某个元素身后
-                  Insert every element in the set of matched elements after the target."
-                  href="https://api.jquery.com/insertAfter/" data-src="jQuery.fn.insertAfter">
+                  <a class="v1-0 insertAfter" title="Insert every element in the set of matched elements after the target."
+                  href="./insertAfter.html" data-src="jQuery.fn.insertAfter">
                     .insertAfter()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 insertBefore" title="
-                  把接口对象作为兄弟元素添加到某个元素身前
-                  Insert every element in the set of matched elements before the target."
-                  href="https://api.jquery.com/insertBefore/" data-src="jQuery.fn.insertBefore">
+                  <a class="v1-0 insertBefore" title="Insert every element in the set of matched elements before the target."
+                  href="./insertBefore.html" data-src="jQuery.fn.insertBefore">
                     .insertBefore()
                   </a>
                 </li>
@@ -2026,34 +1798,26 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-4 detach" title="
-                  除事件全部移除
-                  Remove the set of matched elements from the DOM."
-                  href="https://api.jquery.com/detach/" data-src="jQuery.fn.detach">
+                  <a class="v1-4 detach" title="Remove the set of matched elements from the DOM."
+                  href="./detach.html" data-src="jQuery.fn.detach">
                     .detach()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 empty" title="
-                  置空
-                  Remove all child nodes of the set of matched elements from the DOM."
-                  href="https://api.jquery.com/empty/" data-src="jQuery.fn.empty">
+                  <a class="v1-0 empty" title="Remove all child nodes of the set of matched elements from the DOM."
+                  href="./empty.html" data-src="jQuery.fn.empty">
                     .empty()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 remove" title="
-                  全删
-                  Remove the set of matched elements from the DOM."
-                  href="https://api.jquery.com/remove/" data-src="jQuery.fn.remove">
+                  <a class="v1-0 remove" title="Remove the set of matched elements from the DOM."
+                  href="./remove.html" data-src="jQuery.fn.remove">
                     .remove()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-4 unwrap" title="
-                  去除包裹的父元素
-                  Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place."
-                  href="https://api.jquery.com/unwrap/" data-src="jQuery.fn.unwrap">
+                  <a class="v1-4 unwrap" title="Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place."
+                  href="./unwrap.html" data-src="jQuery.fn.unwrap">
                     .unwrap()
                   </a>
                 </li>
@@ -2065,18 +1829,14 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-2 replaceAll" title="
-                  只接受选择器，新的在前
-                  Replace each target element with the set of matched elements."
-                  href="https://api.jquery.com/replaceAll/" data-src="jQuery.fn.replaceAll">
+                  <a class="v1-2 replaceAll" title="Replace each target element with the set of matched elements."
+                  href="./replaceAll.html" data-src="jQuery.fn.replaceAll">
                     .replaceAll()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-2 replaceWith" title="
-                  基本接收任何参数，新的在后
-                  Replace each element in the set of matched elements with the provided new content."
-                  href="https://api.jquery.com/replaceWith/" data-src="jQuery.fn.replaceWith">
+                  <a class="v1-2 replaceWith" title="Replace each element in the set of matched elements with the provided new content."
+                  href="./replaceWith.html" data-src="jQuery.fn.replaceWith">
                     .replaceWith()
                   </a>
                 </li>
@@ -2097,69 +1857,56 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-1-2 eq" title="
-                  选择指定下标的元素
-                  Reduce the set of matched elements to the one at the specified index."
-                  href="https://api.jquery.com/eq/" data-src="jQuery.fn.eq">
+                  <a class="v1-1-2 eq" title="Reduce the set of matched elements to the one at the specified index."
+                  href="./eq.html" data-src="jQuery.fn.eq">
                     .eq()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-4 first" title="
-                  集合中第一个元素
-                  Reduce the set of matched elements to the first in the set."
-                  href="https://api.jquery.com/first/" data-src="jQuery.fn.first">
-                    .first()
-                  </a>
-                </li>
-                <li>
-                  <a class="v1-4 last" title="
-                  集合中最后一个元素
-                  Reduce the set of matched elements to the final one in the set."
-                  href="https://api.jquery.com/last/" data-src="jQuery.fn.last">
-                    .last()
-                  </a>
-                </li>
-                <li>
-                  <a class="v1-0 filter" title="
-                   过滤选择有选择器的元素
-                  Reduce the set of matched elements to those that match the selector or pass the function's test."
-                  href="https://api.jquery.com/filter/" data-src="jQuery.fn.filter">
+                  <a class="v1-0 filter" title="Reduce the set of matched elements to those that match the selector or pass the function's test."
+                  href="./filter.html" data-src="jQuery.fn.filter">
                     .filter()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 not" title="过滤选择不匹配的元素
-                  Remove elements from the set of matched elements."
-                  href="https://api.jquery.com/not/" data-src="jQuery.fn.not">
-                    .not()
+                  <a class="v1-4 first" title="Reduce the set of matched elements to the first in the set."
+                  href="./first.html" data-src="jQuery.fn.first">
+                    .first()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-4 has" title="由后代中有选择器或者盗墓元素来减少集合匹配元素
-                  Reduce the set of matched elements to those that have a descendant that matches the selector or DOM element."
-                  href="https://api.jquery.com/has/" data-src="jQuery.fn.has">
+                  <a class="v1-4 has" title="Reduce the set of matched elements to those that have a descendant that matches the selector or DOM element."
+                  href="./has.html" data-src="jQuery.fn.has">
                     .has()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 is" title="判断现在匹配的元素集合比较一个选择器，如果至少有一个与集合中的元素相匹配，就返回true，否则返回false
-                  Check the current matched set of elements against a selector and return true if at least one of these elements matches the selector."
-                  href="https://api.jquery.com/is/" data-src="jQuery.fn.is">
+                  <a class="v1-0 is" title="Check the current matched set of elements against a selector and return true if at least one of these elements matches the selector."
+                  href="./is.html" data-src="jQuery.fn.is">
                     .is()
                   </a>
                 </li>
-               
+                <li>
+                  <a class="v1-4 last" title="Reduce the set of matched elements to the final one in the set."
+                  href="./last.html" data-src="jQuery.fn.last">
+                    .last()
+                  </a>
+                </li>
                 <li>
                   <a class="v1-2 map" title="Pass each element in the current matched set through a function, producing a new jQuery object containing the return values."
-                  href="https://api.jquery.com/map/" data-src="jQuery.fn.map">
+                  href="./map.html" data-src="jQuery.fn.map">
                     .map()
                   </a>
                 </li>
-               
+                <li>
+                  <a class="v1-0 not" title="Remove elements from the set of matched elements."
+                  href="./not.html" data-src="jQuery.fn.not">
+                    .not()
+                  </a>
+                </li>
                 <li>
                   <a class="v1-1-4 slice" title="Reduce the set of matched elements to a subset specified by a range of indices."
-                  href="https://api.jquery.com/slice/" data-src="jQuery.fn.slice">
+                  href="./slice.html" data-src="jQuery.fn.slice">
                     .slice()
                   </a>
                 </li>
@@ -2172,31 +1919,31 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 add" title="Add elements to the set of matched elements."
-                  href="https://api.jquery.com/add/" data-src="jQuery.fn.add">
+                  href="./add.html" data-src="jQuery.fn.add">
                     .add()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 andSelf v1-8-d old-version" title="Add the previous set of elements on the stack to the current set."
-                  href="https://api.jquery.com/andSelf/" data-src="jQuery.fn.andSelf">
+                  href="./andSelf.html" data-src="jQuery.fn.andSelf">
                     .andSelf()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 contents" title="Get the children of each element in the set of matched elements, including text and comment nodes."
-                  href="https://api.jquery.com/contents/" data-src="jQuery.fn.contents">
+                  href="./contents.html" data-src="jQuery.fn.contents">
                     .contents()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 each" title="Iterate over a jQuery object, executing a function for each matched element."
-                  href="https://api.jquery.com/each/" data-src="jQuery.fn.each">
+                  href="./each.html" data-src="jQuery.fn.each">
                     .each()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 end" title="End the most recent filtering operation in the current chain and return the set of matched elements to its previous state."
-                  href="https://api.jquery.com/end/" data-src="jQuery.fn.end">
+                  href="./end.html" data-src="jQuery.fn.end">
                     .end()
                   </a>
                 </li>
@@ -2209,85 +1956,85 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-8 addBack" title="Add the previous set of elements on the stack to the current set, optionally filtered by a selector."
-                  href="https://api.jquery.com/addBack/" data-src="jQuery.fn.addBack">
+                  href="./addBack.html" data-src="jQuery.fn.addBack">
                     .addBack()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 children" title="Get the children of each element in the set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/children/" data-src="jQuery.fn.children">
+                  href="./children.html" data-src="jQuery.fn.children">
                     .children()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 closest" title="Get the first ancestor element that matches the selector, beginning at the current element and progressing up through the DOM tree."
-                  href="https://api.jquery.com/closest/" data-src="jQuery.fn.closest">
+                  href="./closest.html" data-src="jQuery.fn.closest">
                     .closest()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 find" title="Get the descendants of each element in the current set of matched elements, filtered by a selector."
-                  href="https://api.jquery.com/find/" data-src="jQuery.fn.find">
+                  href="./find.html" data-src="jQuery.fn.find">
                     .find()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 next" title="Get the immediately following sibling of each element in the set of matched elements. If a selector is provided, it retrieves the next sibling only if it matches that selector."
-                  href="https://api.jquery.com/next/" data-src="jQuery.fn.next">
+                  href="./next.html" data-src="jQuery.fn.next">
                     .next()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 nextAll" title="Get all following siblings of each element in the set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/nextAll/" data-src="jQuery.fn.nextAll">
+                  href="./nextAll.html" data-src="jQuery.fn.nextAll">
                     .nextAll()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 nextUntil" title="Get all following siblings of each element up to but not including the element matched by the selector."
-                  href="https://api.jquery.com/nextUntil/" data-src="jQuery.fn.nextUntil">
+                  href="./nextUntil.html" data-src="jQuery.fn.nextUntil">
                     .nextUntil()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 parent" title="Get the parent of each element in the current set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/parent/" data-src="jQuery.fn.parent">
+                  href="./parent.html" data-src="jQuery.fn.parent">
                     .parent()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 parents" title="Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/parents/" data-src="jQuery.fn.parents">
+                  href="./parents.html" data-src="jQuery.fn.parents">
                     .parents()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 parentsUntil" title="Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector."
-                  href="https://api.jquery.com/parentsUntil/" data-src="jQuery.fn.parentsUntil">
+                  href="./parentsUntil.html" data-src="jQuery.fn.parentsUntil">
                     .parentsUntil()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 prev" title="Get the immediately preceding sibling of each element in the set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/prev/" data-src="jQuery.fn.prev">
+                  href="./prev.html" data-src="jQuery.fn.prev">
                     .prev()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 prevAll" title="Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/prevAll/" data-src="jQuery.fn.prevAll">
+                  href="./prevAll.html" data-src="jQuery.fn.prevAll">
                     .prevAll()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 prevUntil" title="Get all preceding siblings of each element up to but not including the element matched by the selector."
-                  href="https://api.jquery.com/prevUntil/" data-src="jQuery.fn.prevUntil">
+                  href="./prevUntil.html" data-src="jQuery.fn.prevUntil">
                     .prevUntil()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 siblings" title="Get the siblings of each element in the set of matched elements, optionally filtered by a selector."
-                  href="https://api.jquery.com/siblings/" data-src="jQuery.fn.siblings">
+                  href="./siblings.html" data-src="jQuery.fn.siblings">
                     .siblings()
                   </a>
                 </li>
@@ -2309,19 +2056,19 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 error v1-8-d old-version" title="Bind an event handler to the 'error' JavaScript event."
-                  href="https://api.jquery.com/error/" data-src="jQuery.fn.error">
+                  href="./error.html" data-src="jQuery.fn.error">
                     .error()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 resize" title="Bind an event handler to the 'resize' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/resize/" data-src="jQuery.fn.resize">
+                  href="./resize.html" data-src="jQuery.fn.resize">
                     .resize()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 scroll" title="Bind an event handler to the 'scroll' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/scroll/" data-src="jQuery.fn.scroll">
+                  href="./scroll.html" data-src="jQuery.fn.scroll">
                     .scroll()
                   </a>
                 </li>
@@ -2334,25 +2081,25 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-6 jQuery-holdReady" title="Holds or releases the execution of jQuery's ready event."
-                  href="https://api.jquery.com/jQuery.holdReady/" data-src="jQuery.holdReady">
+                  href="./jQuery.holdReady.html" data-src="jQuery.holdReady">
                     .holdReady()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 load-event v1-8-d old-version" title="Bind an event handler to the 'load' JavaScript event."
-                  href="https://api.jquery.com/load-event/" data-src="jQuery.fn.load">
+                  href="./load-event.html" data-src="jQuery.fn.load">
                     .load()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 ready" title="Specify a function to execute when the DOM is fully loaded."
-                  href="https://api.jquery.com/ready/" data-src="jQuery.fn.ready">
+                  href="./ready.html" data-src="jQuery.fn.ready">
                     .ready()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 unload v1-8-d old-version" title="Bind an event handler to the 'unload' JavaScript event."
-                  href="https://api.jquery.com/unload/" data-src="jQuery.fn.unload">
+                  href="./unload.html" data-src="jQuery.fn.unload">
                     .unload()
                   </a>
                 </li>
@@ -2364,68 +2111,68 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 bind removed old-version" title="Attach a handler to an event for the elements."
-                  href="https://api.jquery.com/bind/" data-src="jQuery.fn.bind">
+                  <a class="v1-0 bind" title="Attach a handler to an event for the elements."
+                  href="./bind.html" data-src="jQuery.fn.bind">
                     .bind()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-4-2 delegate removed old-version" title="Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements."
-                  href="https://api.jquery.com/delegate/" data-src="jQuery.fn.delegate">
+                  <a class="v1-4-2 delegate" title="Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements."
+                  href="./delegate.html" data-src="jQuery.fn.delegate">
                     .delegate()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 die v1-7-d v1-9-r removed old-version" title="Remove all event handlers previously attached using .live() from the elements."
-                  href="https://api.jquery.com/die/" data-src="jQuery.fn.die">
+                  href="./die.html" data-src="jQuery.fn.die">
                     .die()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 live v1-7-d v1-9-r removed old-version" title="Attach a handler to the event for all elements which match the current selector, now and in the future."
-                  href="https://api.jquery.com/live/" data-src="jQuery.fn.live">
+                  href="./live.html" data-src="jQuery.fn.live">
                     .live()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-7 off" title="Remove an event handler." href="https://api.jquery.com/off/"
+                  <a class="v1-7 off" title="Remove an event handler." href="./off.html"
                   data-src="jQuery.fn.off">
                     .off()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 on" title="Attach an event handler function for one or more events to the selected elements."
-                  href="https://api.jquery.com/on/" data-src="jQuery.fn.on">
+                  href="./on.html" data-src="jQuery.fn.on">
                     .on()
                   </a>
                 </li>
                 <li>
                   <a class="v1-1 one" title="Attach a handler to an event for the elements. The handler is executed at most once per element."
-                  href="https://api.jquery.com/one/" data-src="jQuery.fn.one">
+                  href="./one.html" data-src="jQuery.fn.one">
                     .one()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 trigger" title="Execute all handlers and behaviors attached to the matched elements for the given event type."
-                  href="https://api.jquery.com/trigger/" data-src="jQuery.fn.trigger">
+                  href="./trigger.html" data-src="jQuery.fn.trigger">
                     .trigger()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 triggerHandler" title="Execute all handlers attached to an element for an event."
-                  href="https://api.jquery.com/triggerHandler/" data-src="jQuery.fn.triggerHandler">
+                  href="./triggerHandler.html" data-src="jQuery.fn.triggerHandler">
                     .triggerHandler()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 unbind" title="Remove a previously-attached event handler from the elements."
-                  href="https://api.jquery.com/unbind/" data-src="jQuery.fn.unbind">
+                  href="./unbind.html" data-src="jQuery.fn.unbind">
                     .unbind()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-2 undelegate" title="Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."
-                  href="https://api.jquery.com/undelegate/" data-src="jQuery.fn.undelegate">
+                  href="./undelegate.html" data-src="jQuery.fn.undelegate">
                     .undelegate()
                   </a>
                 </li>
@@ -2438,31 +2185,31 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 blur" title="Bind an event handler to the 'blur' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/blur/" data-src="jQuery.fn.blur">
+                  href="./blur.html" data-src="jQuery.fn.blur">
                     .blur()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 change" title="Bind an event handler to the 'change' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/change/" data-src="jQuery.fn.change">
+                  href="./change.html" data-src="jQuery.fn.change">
                     .change()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 focus" title="Bind an event handler to the 'focus' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/focus/" data-src="jQuery.fn.focus">
+                  href="./focus.html" data-src="jQuery.fn.focus">
                     .focus()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 select" title="Bind an event handler to the 'select' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/select/" data-src="jQuery.fn.select">
+                  href="./select.html" data-src="jQuery.fn.select">
                     .select()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 submit" title="Bind an event handler to the 'submit' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/submit/" data-src="jQuery.fn.submit">
+                  href="./submit.html" data-src="jQuery.fn.submit">
                     .submit()
                   </a>
                 </li>
@@ -2475,19 +2222,19 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 keydown" title="Bind an event handler to the 'keydown' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/keydown/" data-src="jQuery.fn.keydown">
+                  href="./keydown.html" data-src="jQuery.fn.keydown">
                     .keydown()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 keypress" title="Bind an event handler to the 'keypress' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/keypress/" data-src="jQuery.fn.keypress">
+                  href="./keypress.html" data-src="jQuery.fn.keypress">
                     .keypress()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 keyup" title="Bind an event handler to the 'keyup' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/keyup/" data-src="jQuery.fn.keyup">
+                  href="./keyup.html" data-src="jQuery.fn.keyup">
                     .keyup()
                   </a>
                 </li>
@@ -2502,79 +2249,79 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 click" title="Bind an event handler to the 'click' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/click/" data-src="jQuery.fn.click">
+                  href="./click.html" data-src="jQuery.fn.click">
                     .click()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 dblclick" title="Bind an event handler to the 'dblclick' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/dblclick/" data-src="jQuery.fn.dblclick">
+                  href="./dblclick.html" data-src="jQuery.fn.dblclick">
                     .dblclick()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 focusin" title="Bind an event handler to the 'focusin' JavaScript event."
-                  href="https://api.jquery.com/focusin/" data-src="jQuery.fn.focusin">
+                  href="./focusin.html" data-src="jQuery.fn.focusin">
                     .focusin()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 focusout" title="Bind an event handler to the 'focusout' JavaScript event."
-                  href="https://api.jquery.com/focusout/" data-src="jQuery.fn.focusout">
+                  href="./focusout.html" data-src="jQuery.fn.focusout">
                     .focusout()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 hover" title="Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements."
-                  href="https://api.jquery.com/hover/" data-src="jQuery.fn.hover">
+                  href="./hover.html" data-src="jQuery.fn.hover">
                     .hover()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mousedown" title="Bind an event handler to the 'mousedown' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/mousedown/" data-src="jQuery.fn.mousedown">
+                  href="./mousedown.html" data-src="jQuery.fn.mousedown">
                     .mousedown()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mouseenter" title="Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element."
-                  href="https://api.jquery.com/mouseenter/" data-src="jQuery.fn.mouseenter">
+                  href="./mouseenter.html" data-src="jQuery.fn.mouseenter">
                     .mouseenter()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mouseleave" title="Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element."
-                  href="https://api.jquery.com/mouseleave/" data-src="jQuery.fn.mouseleave">
+                  href="./mouseleave.html" data-src="jQuery.fn.mouseleave">
                     .mouseleave()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mousemove" title="Bind an event handler to the 'mousemove' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/mousemove/" data-src="jQuery.fn.mousemove">
+                  href="./mousemove.html" data-src="jQuery.fn.mousemove">
                     .mousemove()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mouseout" title="Bind an event handler to the 'mouseout' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/mouseout/" data-src="jQuery.fn.mouseout">
+                  href="./mouseout.html" data-src="jQuery.fn.mouseout">
                     .mouseout()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mouseover" title="Bind an event handler to the 'mouseover' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/mouseover/" data-src="jQuery.fn.mouseover">
+                  href="./mouseover.html" data-src="jQuery.fn.mouseover">
                     .mouseover()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 mouseup" title="Bind an event handler to the 'mouseup' JavaScript event, or trigger that event on an element."
-                  href="https://api.jquery.com/mouseup/" data-src="jQuery.fn.mouseup">
+                  href="./mouseup.html" data-src="jQuery.fn.mouseup">
                     .mouseup()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 toggle-event v1-8-d v1-9-r removed old-version" title="Bind two or more handlers to the matched elements, to be executed on alternate clicks."
-                  href="https://api.jquery.com/toggle-event/" data-src="jQuery.fn.toggle">
+                  href="./toggle-event.html" data-src="jQuery.fn.toggle">
                     .toggle()
                   </a>
                 </li>
@@ -2587,103 +2334,103 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-3 event-currentTarget" title="The current DOM element within the event bubbling phase."
-                  href="https://api.jquery.com/event.currentTarget/" data-src="">
+                  href="./event.currentTarget.html" data-src="">
                     event.currentTarget
                   </a>
                 </li>
                 <li>
                   <a class="v1-1 event-data" title="The optional data passed to jQuery.fn.bind when the current executing handler was bound."
-                  href="https://api.jquery.com/event.data/" data-src="">
+                  href="./event.data.html" data-src="">
                     event.data
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 event-isDefaultPrevented" title="Returns whether event.preventDefault() was ever called on this event object."
-                  href="https://api.jquery.com/event.isDefaultPrevented/" data-src="">
+                  href="./event.isDefaultPrevented.html" data-src="">
                     event.isDefaultPrevented()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 event-isImmediatePropagationStopped" title="Returns whether event.stopImmediatePropagation() was ever called on this event object."
-                  href="https://api.jquery.com/event.isImmediatePropagationStopped/" data-src="">
+                  href="./event.isImmediatePropagationStopped.html" data-src="">
                     event.isImmediatePropagationStopped()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 event-isPropagationStopped" title="Returns whether event.stopPropagation() was ever called on this event object."
-                  href="https://api.jquery.com/event.isPropagationStopped/" data-src="">
+                  href="./event.isPropagationStopped.html" data-src="">
                     event.isPropagationStopped()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-3 event-namespace" title="The namespace specified when the event was triggered."
-                  href="https://api.jquery.com/event.namespace/" data-src="">
+                  href="./event.namespace.html" data-src="">
                     event.namespace
                   </a>
                 </li>
                 <li>
                   <a class="v1-0-4 event-pageX" title="The mouse position relative to the left edge of the document."
-                  href="https://api.jquery.com/event.pageX/" data-src="">
+                  href="./event.pageX.html" data-src="">
                     event.pageX
                   </a>
                 </li>
                 <li>
                   <a class="v1-0-4 event-pageY" title="The mouse position relative to the top edge of the document."
-                  href="https://api.jquery.com/event.pageY/" data-src="">
+                  href="./event.pageY.html" data-src="">
                     event.pageY
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 event-preventDefault" title="If this method is called, the default action of the event will not be triggered."
-                  href="https://api.jquery.com/event.preventDefault/" data-src="">
+                  href="./event.preventDefault.html" data-src="">
                     event.preventDefault()
                   </a>
                 </li>
                 <li>
                   <a class="v1-1-4 event-relatedTarget" title="The other DOM element involved in the event, if any."
-                  href="https://api.jquery.com/event.relatedTarget/" data-src="">
+                  href="./event.relatedTarget.html" data-src="">
                     event.relatedTarget
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 event-result" title="The last value returned by an event handler that was triggered by this event, unless the value was undefined."
-                  href="https://api.jquery.com/event.result/" data-src="">
+                  href="./event.result.html" data-src="">
                     event.result
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 event-stopImmediatePropagation" title="Prevents other event handlers from being called."
-                  href="https://api.jquery.com/event.stopImmediatePropagation/" data-src="">
+                  href="./event.stopImmediatePropagation.html" data-src="">
                     event.stopImmediatePropagation()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 event-stopPropagation" title="Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event."
-                  href="https://api.jquery.com/event.stopPropagation/" data-src="">
+                  href="./event.stopPropagation.html" data-src="">
                     event.stopPropagation()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 event-target" title="The DOM element that initiated the event."
-                  href="https://api.jquery.com/event.target/" data-src="">
+                  href="./event.target.html" data-src="">
                     event.target
                   </a>
                 </li>
                 <li>
                   <a class="v1-2-6 event-timeStamp" title="The difference in milliseconds between the time an event is triggered and January 1, 1970."
-                  href="https://api.jquery.com/event.timeStamp/" data-src="">
+                  href="./event.timeStamp.html" data-src="">
                     event.timeStamp
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 event-type" title="Describes the nature of the event."
-                  href="https://api.jquery.com/event.type/" data-src="">
+                  href="./event.type.html" data-src="">
                     event.type
                   </a>
                 </li>
                 <li>
                   <a class="v1-1-3 event-which" title="For key or button events, this attribute indicates the specific button or key that was pressed."
-                  href="https://api.jquery.com/event.which/" data-src="">
+                  href="./event.which.html" data-src="">
                     event.which
                   </a>
                 </li>
@@ -2704,21 +2451,19 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               </h2>
               <ul>
                 <li>
-                  <a class="v1-0 hide" title="
-                   动画：隐藏匹配的元素，可以传时间，以及时间过后动作
-                  Hide the matched elements." href="https://api.jquery.com/hide/"
+                  <a class="v1-0 hide" title="Hide the matched elements." href="./hide.html"
                   data-src="jQuery.fn.hide">
                     .hide()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 show" title="Display the matched elements." href="https://api.jquery.com/show/"
+                  <a class="v1-0 show" title="Display the matched elements." href="./show.html"
                   data-src="jQuery.fn.show">
                     .show()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-0 toggle" title="Display or hide the matched elements." href="https://api.jquery.com/toggle/"
+                  <a class="v1-0 toggle" title="Display or hide the matched elements." href="./toggle.html"
                   data-src="jQuery.fn.toggle">
                     .toggle()
                   </a>
@@ -2732,67 +2477,67 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 animate" title="Perform a custom animation of a set of CSS properties."
-                  href="https://api.jquery.com/animate/" data-src="jQuery.fn.animate">
+                  href="./animate.html" data-src="jQuery.fn.animate">
                     .animate()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 clearQueue" title="Remove from the queue all items that have not yet been run."
-                  href="https://api.jquery.com/clearQueue/" data-src="jQuery.fn.clearQueue">
+                  href="./clearQueue.html" data-src="jQuery.fn.clearQueue">
                     .clearQueue()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 delay" title="Set a timer to delay execution of subsequent items in the queue."
-                  href="https://api.jquery.com/delay/" data-src="jQuery.fn.delay">
+                  href="./delay.html" data-src="jQuery.fn.delay">
                     .delay()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 dequeue" title="Execute the next function on the queue for the matched elements."
-                  href="https://api.jquery.com/dequeue/" data-src="jQuery.fn.dequeue">
+                  href="./dequeue.html" data-src="jQuery.fn.dequeue">
                     .dequeue()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 jQuery-dequeue" title="Execute the next function on the queue for the matched element."
-                  href="https://api.jquery.com/jQuery.dequeue/" data-src="jQuery.dequeue">
+                  href="./jQuery.dequeue.html" data-src="jQuery.dequeue">
                     jQuery.dequeue()
                   </a>
                 </li>
                 <li>
                   <a class="v1-9 finish" title="Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements."
-                  href="https://api.jquery.com/finish/" data-src="jQuery.fn.finish">
+                  href="./finish.html" data-src="jQuery.fn.finish">
                     .finish()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-3 jQuery-fx-interval" title="The rate (in milliseconds) at which animations fire."
-                  href="https://api.jquery.com/jQuery.fx.interval/" data-src="jQuery.fx.interval">
+                  href="./jQuery.fx.interval.html" data-src="jQuery.fx.interval">
                     jQuery.fx.interval
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 jQuery-fx-off" title="Globally disable all animations."
-                  href="https://api.jquery.com/jQuery.fx.off/" data-src="jQuery.fx.off">
+                  href="./jQuery.fx.off.html" data-src="jQuery.fx.off">
                     jQuery.fx.off
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 queue" title="Show or manipulate the queue of functions to be executed on the matched elements."
-                  href="https://api.jquery.com/queue/" data-src="jQuery.fn.queue">
+                  href="./queue.html" data-src="jQuery.fn.queue">
                     .queue()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 jQuery-queue" title="Show or manipulate the queue of functions to be executed on the matched element."
-                  href="https://api.jquery.com/jQuery.queue/" data-src="jQuery.queue">
+                  href="./jQuery.queue.html" data-src="jQuery.queue">
                     jQuery.queue()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 stop" title="Stop the currently-running animation on the matched elements."
-                  href="https://api.jquery.com/stop/" data-src="jQuery.fn.stop">
+                  href="./stop.html" data-src="jQuery.fn.stop">
                     .stop()
                   </a>
                 </li>
@@ -2805,25 +2550,25 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 fadeIn" title="Display the matched elements by fading them to opaque."
-                  href="https://api.jquery.com/fadeIn/" data-src="jQuery.fn.fadeIn">
+                  href="./fadeIn.html" data-src="jQuery.fn.fadeIn">
                     .fadeIn()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 fadeOut" title="Hide the matched elements by fading them to transparent."
-                  href="https://api.jquery.com/fadeOut/" data-src="jQuery.fn.fadeOut">
+                  href="./fadeOut.html" data-src="jQuery.fn.fadeOut">
                     .fadeOut()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 fadeTo" title="Adjust the opacity of the matched elements."
-                  href="https://api.jquery.com/fadeTo/" data-src="jQuery.fn.fadeTo">
+                  href="./fadeTo.html" data-src="jQuery.fn.fadeTo">
                     .fadeTo()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-4 fadeToggle" title="Display or hide the matched elements by animating their opacity."
-                  href="https://api.jquery.com/fadeToggle/" data-src="jQuery.fn.fadeToggle">
+                  href="./fadeToggle.html" data-src="jQuery.fn.fadeToggle">
                     .fadeToggle()
                   </a>
                 </li>
@@ -2836,19 +2581,19 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 slideDown" title="Display the matched elements with a sliding motion."
-                  href="https://api.jquery.com/slideDown/" data-src="jQuery.fn.slideDown">
+                  href="./slideDown.html" data-src="jQuery.fn.slideDown">
                     .slideDown()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 slideToggle" title="Display or hide the matched elements with a sliding motion."
-                  href="https://api.jquery.com/slideToggle/" data-src="jQuery.fn.slideToggle">
+                  href="./slideToggle.html" data-src="jQuery.fn.slideToggle">
                     .slideToggle()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 slideUp" title="Hide the matched elements with a sliding motion."
-                  href="https://api.jquery.com/slideUp/" data-src="jQuery.fn.slideUp">
+                  href="./slideUp.html" data-src="jQuery.fn.slideUp">
                     .slideUp()
                   </a>
                 </li>
@@ -2870,37 +2615,37 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 ajaxComplete" title="Register a handler to be called when Ajax requests complete. This is an Ajax Event."
-                  href="https://api.jquery.com/ajaxComplete/" data-src="jQuery.fn.ajaxComplete">
+                  href="./ajaxComplete.html" data-src="jQuery.fn.ajaxComplete">
                     .ajaxComplete()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 ajaxError" title="Register a handler to be called when Ajax requests complete with an error. This is an Ajax Event."
-                  href="https://api.jquery.com/ajaxError/" data-src="jQuery.fn.ajaxError">
+                  href="./ajaxError.html" data-src="jQuery.fn.ajaxError">
                     .ajaxError()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 ajaxSend" title="Attach a function to be executed before an Ajax request is sent. This is an Ajax Event."
-                  href="https://api.jquery.com/ajaxSend/" data-src="jQuery.fn.ajaxSend">
+                  href="./ajaxSend.html" data-src="jQuery.fn.ajaxSend">
                     .ajaxSend()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 ajaxStart" title="Register a handler to be called when the first Ajax request begins. This is an Ajax Event."
-                  href="https://api.jquery.com/ajaxStart/" data-src="jQuery.fn.ajaxStart">
+                  href="./ajaxStart.html" data-src="jQuery.fn.ajaxStart">
                     .ajaxStart()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 ajaxStop" title="Register a handler to be called when all Ajax requests have completed. This is an Ajax Event."
-                  href="https://api.jquery.com/ajaxStop/" data-src="jQuery.fn.ajaxStop">
+                  href="./ajaxStop.html" data-src="jQuery.fn.ajaxStop">
                     .ajaxStop()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 ajaxSuccess" title="Attach a function to be executed whenever an Ajax request completes successfully. This is an Ajax Event."
-                  href="https://api.jquery.com/ajaxSuccess/" data-src="jQuery.fn.ajaxSuccess">
+                  href="./ajaxSuccess.html" data-src="jQuery.fn.ajaxSuccess">
                     .ajaxSuccess()
                   </a>
                 </li>
@@ -2913,19 +2658,19 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-2 jQuery-param" title="Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request."
-                  href="https://api.jquery.com/jQuery.param/" data-src="jQuery.param">
+                  href="./jQuery.param.html" data-src="jQuery.param">
                     jQuery.param()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 serialize" title="Encode a set of form elements as a string for submission."
-                  href="https://api.jquery.com/serialize/" data-src="jQuery.fn.serialize">
+                  href="./serialize.html" data-src="jQuery.fn.serialize">
                     .serialize()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 serializeArray" title="Encode a set of form elements as an array of names and values."
-                  href="https://api.jquery.com/serializeArray/" data-src="jQuery.fn.serializeArray">
+                  href="./serializeArray.html" data-src="jQuery.fn.serializeArray">
                     .serializeArray()
                   </a>
                 </li>
@@ -2938,13 +2683,13 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 jQuery-ajax" title="Perform an asynchronous HTTP (Ajax) request."
-                  href="https://api.jquery.com/jQuery.ajax/" data-src="jQuery.ajax">
+                  href="./jQuery.ajax.html" data-src="jQuery.ajax">
                     jQuery.ajax()
                   </a>
                 </li>
                 <li>
                   <a class="v1-1 jQuery-ajaxSetup" title="Set default values for future Ajax requests."
-                  href="https://api.jquery.com/jQuery.ajaxSetup/" data-src="jQuery.ajaxSetup">
+                  href="./jQuery.ajaxSetup.html" data-src="jQuery.ajaxSetup">
                     jQuery.ajaxSetup()
                   </a>
                 </li>
@@ -2957,31 +2702,31 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 jQuery-get" title="Load data from the server using a HTTP GET request."
-                  href="https://api.jquery.com/jQuery.get/" data-src="jQuery.get">
+                  href="./jQuery.get.html" data-src="jQuery.get">
                     jQuery.get()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-getJSON" title="Load JSON-encoded data from the server using a GET HTTP request."
-                  href="https://api.jquery.com/jQuery.getJSON/" data-src="jQuery.getJSON">
+                  href="./jQuery.getJSON.html" data-src="jQuery.getJSON">
                     jQuery.getJSON()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-getScript" title="Load a JavaScript file from the server using a GET HTTP request, then execute it."
-                  href="https://api.jquery.com/jQuery.getScript/" data-src="jQuery.getScript">
+                  href="./jQuery.getScript.html" data-src="jQuery.getScript">
                     jQuery.getScript()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 load" title="Load data from the server and place the returned HTML into the matched element."
-                  href="https://api.jquery.com/load/" data-src="jQuery.fn.load">
+                  href="./load.html" data-src="jQuery.fn.load">
                     .load()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-post" title="Load data from the server using a HTTP POST request."
-                  href="https://api.jquery.com/jQuery.post/" data-src="jQuery.post">
+                  href="./jQuery.post.html" data-src="jQuery.post">
                     jQuery.post()
                   </a>
                 </li>
@@ -3003,25 +2748,25 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 jQuery" title="Return a collection of matched elements either found in the DOM based on passed argument(s) or created by passing an HTML string."
-                  href="https://api.jquery.com/jQuery/" data-src="jQuery">
+                  href="./jQuery.html" data-src="jQuery">
                     jQuery()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-noConflict" title="Relinquish jQuery's control of the $ variable."
-                  href="https://api.jquery.com/jQuery.noConflict/" data-src="jQuery.noConflict">
+                  href="./jQuery.noConflict.html" data-src="jQuery.noConflict">
                     jQuery.noConflict()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 jQuery-sub v1-7-d v1-9-r removed old-version" title="Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object."
-                  href="https://api.jquery.com/jQuery.sub/" data-src="jQuery.sub">
+                  href="./jQuery.sub.html" data-src="jQuery.sub">
                     jQuery.sub()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 jQuery-when" title="Provides a way to execute callback functions based on one or more objects, usually Deferred objects that represent asynchronous events."
-                  href="https://api.jquery.com/jQuery.when/" data-src="jQuery.when">
+                  href="./jQuery.when.html" data-src="jQuery.when">
                     jQuery.when()
                   </a>
                 </li>
@@ -3034,169 +2779,169 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 jQuery-boxModel v1-3-d v1-8-r removed old-version" title="States if the current page, in the user's browser, is being rendered using the W3C CSS Box Model."
-                  href="https://api.jquery.com/jQuery.boxModel/" data-src="jQuery.boxModel">
+                  href="./jQuery.boxModel.html" data-src="jQuery.boxModel">
                     jQuery.boxModel
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-browser v1-3-d v1-9-r removed old-version" title="Contains flags for the useragent, read from navigator.userAgent. We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery."
-                  href="https://api.jquery.com/jQuery.browser/" data-src="jQuery.browser">
+                  href="./jQuery.browser.html" data-src="jQuery.browser">
                     jQuery.browser
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 jQuery-contains" title="Check to see if a DOM node is within another DOM node."
-                  href="https://api.jquery.com/jQuery.contains/" data-src="jQuery.contains">
+                  href="./jQuery.contains.html" data-src="jQuery.contains">
                     jQuery.contains()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-each" title="A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties."
-                  href="https://api.jquery.com/jQuery.each/" data-src="jQuery.each">
+                  href="./jQuery.each.html" data-src="jQuery.each">
                     jQuery.each()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-extend" title="Merge the contents of two or more objects together into the first object."
-                  href="https://api.jquery.com/jQuery.extend/" data-src="jQuery.extend">
+                  href="./jQuery.extend.html" data-src="jQuery.extend">
                     jQuery.extend()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0-4 jQuery-globalEval" title="Execute some JavaScript code globally."
-                  href="https://api.jquery.com/jQuery.globalEval/" data-src="jQuery.globalEval">
+                  href="./jQuery.globalEval.html" data-src="jQuery.globalEval">
                     jQuery.globalEval()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-grep" title="Finds the elements of an array which satisfy a filter function. The original array is not affected."
-                  href="https://api.jquery.com/jQuery.grep/" data-src="jQuery.grep">
+                  href="./jQuery.grep.html" data-src="jQuery.grep">
                     jQuery.grep()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 jQuery-inArray" title="Search for a specified value within an array and return its index (or -1 if not found)."
-                  href="https://api.jquery.com/jQuery.inArray/" data-src="jQuery.inArray">
+                  href="./jQuery.inArray.html" data-src="jQuery.inArray">
                     jQuery.inArray()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 jQuery-isArray" title="Determine whether the argument is an array."
-                  href="https://api.jquery.com/jQuery.isArray/" data-src="jQuery.isArray">
+                  href="./jQuery.isArray.html" data-src="jQuery.isArray">
                     jQuery.isArray()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 jQuery-isEmptyObject" title="Check to see if an object is empty (contains no properties)."
-                  href="https://api.jquery.com/jQuery.isEmptyObject/" data-src="jQuery.isEmptyObject">
+                  href="./jQuery.isEmptyObject.html" data-src="jQuery.isEmptyObject">
                     jQuery.isEmptyObject()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 jQuery-isFunction" title="Determine if the argument passed is a Javascript function object."
-                  href="https://api.jquery.com/jQuery.isFunction/" data-src="jQuery.isFunction">
+                  href="./jQuery.isFunction.html" data-src="jQuery.isFunction">
                     jQuery.isFunction()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 jQuery-isNumeric" title="Determines whether its argument is a number."
-                  href="https://api.jquery.com/jQuery.isNumeric/" data-src="jQuery.isNumeric">
+                  href="./jQuery.isNumeric.html" data-src="jQuery.isNumeric">
                     jQuery.isNumeric()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 jQuery-isPlainObject" title="Check to see if an object is a plain object (created using '{}' or 'new Object')."
-                  href="https://api.jquery.com/jQuery.isPlainObject/" data-src="jQuery.isPlainObject">
+                  href="./jQuery.isPlainObject.html" data-src="jQuery.isPlainObject">
                     jQuery.isPlainObject()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-3 jQuery-isWindow" title="Determine whether the argument is a window."
-                  href="https://api.jquery.com/jQuery.isWindow/" data-src="jQuery.isWindow">
+                  href="./jQuery.isWindow.html" data-src="jQuery.isWindow">
                     jQuery.isWindow()
                   </a>
                 </li>
                 <li>
                   <a class="v1-1-4 jQuery-isXMLDoc" title="Check to see if a DOM node is within an XML document (or is an XML document)."
-                  href="https://api.jquery.com/jQuery.isXMLDoc/" data-src="jQuery.isXMLDoc">
+                  href="./jQuery.isXMLDoc.html" data-src="jQuery.isXMLDoc">
                     jQuery.isXMLDoc()
                   </a>
                 </li>
                 <li>
                   <a class="v1-2 jQuery-makeArray" title="Convert an array-like object into a true JavaScript array."
-                  href="https://api.jquery.com/jQuery.makeArray/" data-src="jQuery.makeArray">
+                  href="./jQuery.makeArray.html" data-src="jQuery.makeArray">
                     jQuery.makeArray()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-map" title="Translate all items in an array or array-like object to another array of items."
-                  href="https://api.jquery.com/jQuery.map/" data-src="jQuery.map">
+                  href="./jQuery.map.html" data-src="jQuery.map">
                     jQuery.map()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-merge" title="Merge the contents of two arrays together into the first array."
-                  href="https://api.jquery.com/jQuery.merge/" data-src="jQuery.merge">
+                  href="./jQuery.merge.html" data-src="jQuery.merge">
                     jQuery.merge()
                   </a>
                 </li>
                 <li>
-                  <a class="v1-4 jQuery-noop" title="An empty function." href="https://api.jquery.com/jQuery.noop/"
+                  <a class="v1-4 jQuery-noop" title="An empty function." href="./jQuery.noop.html"
                   data-src="jQuery.noop">
                     jQuery.noop()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-3 jQuery-now" title="Return a number representing the current time."
-                  href="https://api.jquery.com/jQuery.now/" data-src="jQuery.now">
+                  href="./jQuery.now.html" data-src="jQuery.now">
                     jQuery.now()
                   </a>
                 </li>
                 <li>
                   <a class="v1-8 jQuery-parseHTML" title="Parses a string into an array of DOM nodes."
-                  href="https://api.jquery.com/jQuery.parseHTML/" data-src="jQuery.parseHTML">
+                  href="./jQuery.parseHTML.html" data-src="jQuery.parseHTML">
                     jQuery.parseHTML()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-1 jQuery-parseJSON" title="Takes a well-formed JSON string and returns the resulting JavaScript object."
-                  href="https://api.jquery.com/jQuery.parseJSON/" data-src="jQuery.parseJSON">
+                  href="./jQuery.parseJSON.html" data-src="jQuery.parseJSON">
                     jQuery.parseJSON()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 jQuery-parseXML" title="Parses a string into an XML document."
-                  href="https://api.jquery.com/jQuery.parseXML/" data-src="jQuery.parseXML">
+                  href="./jQuery.parseXML.html" data-src="jQuery.parseXML">
                     jQuery.parseXML()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 jQuery-proxy" title="Takes a function and returns a new one that will always have a particular context."
-                  href="https://api.jquery.com/jQuery.proxy/" data-src="jQuery.proxy">
+                  href="./jQuery.proxy.html" data-src="jQuery.proxy">
                     jQuery.proxy()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 jQuery-support v1-9-d old-version" title="A collection of properties that represent the presence of different browser features or bugs."
-                  href="https://api.jquery.com/jQuery.support/" data-src="jQuery.support">
+                  href="./jQuery.support.html" data-src="jQuery.support">
                     jQuery.support
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 jQuery-trim" title="Remove the whitespace from the beginning and end of a string."
-                  href="https://api.jquery.com/jQuery.trim/" data-src="jQuery.trim">
+                  href="./jQuery.trim.html" data-src="jQuery.trim">
                     jQuery.trim()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-3 jQuery-type" title="Determine the internal JavaScript [[Class]] of an object."
-                  href="https://api.jquery.com/jQuery.type/" data-src="jQuery.type">
+                  href="./jQuery.type.html" data-src="jQuery.type">
                     jQuery.type()
                   </a>
                 </li>
                 <li>
                   <a class="v1-1-3 jQuery-unique" title="Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers."
-                  href="https://api.jquery.com/jQuery.unique/" data-src="jQuery.unique">
+                  href="./jQuery.unique.html" data-src="jQuery.unique">
                     jQuery.unique()
                   </a>
                 </li>
@@ -3211,25 +2956,25 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 get" title="Retrieve the DOM elements matched by the jQuery object."
-                  href="https://api.jquery.com/get/" data-src="jQuery.fn.get">
+                  href="./get.html" data-src="jQuery.fn.get">
                     .get()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 index" title="Search for a given element from among the matched elements."
-                  href="https://api.jquery.com/index/" data-src="jQuery.fn.index">
+                  href="./index.html" data-src="jQuery.fn.index">
                     .index()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 size v1-8-d old-version" title="Return the number of elements in the jQuery object."
-                  href="https://api.jquery.com/size/" data-src="jQuery.fn.size">
+                  href="./size.html" data-src="jQuery.fn.size">
                     .size()
                   </a>
                 </li>
                 <li>
                   <a class="v1-4 toArray" title="Retrieve all the DOM elements contained in the jQuery set, as an array."
-                  href="https://api.jquery.com/toArray/" data-src="jQuery.fn.toArray">
+                  href="./toArray.html" data-src="jQuery.fn.toArray">
                     .toArray()
                   </a>
                 </li>
@@ -3242,37 +2987,37 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-0 jquery-2" title="A string containing the jQuery version number."
-                  href="https://api.jquery.com/jquery-2/" data-src="jQuery.fn.jquery">
+                  href="./jquery-2.html" data-src="jQuery.fn.jquery">
                     .jquery
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 context v1-10-d old-version" title="The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document."
-                  href="https://api.jquery.com/context/" data-src="jQuery.fn.context">
+                  href="./context.html" data-src="jQuery.fn.context">
                     .context
                   </a>
                 </li>
                 <li>
                   <a class="v1-4-1 jQuery-error" title="Takes a string and throws an exception containing it."
-                  href="https://api.jquery.com/jQuery.error/" data-src="jQuery.error">
+                  href="./jQuery.error.html" data-src="jQuery.error">
                     jQuery.error()
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 length" title="The number of elements in the jQuery object."
-                  href="https://api.jquery.com/length/" data-src="jQuery.fn.length">
+                  href="./length.html" data-src="jQuery.fn.length">
                     .length
                   </a>
                 </li>
                 <li>
                   <a class="v1-0 pushStack" title="Add a collection of DOM elements onto the jQuery stack."
-                  href="https://api.jquery.com/pushStack/" data-src="jQuery.fn.pushStack">
+                  href="./pushStack.html" data-src="jQuery.fn.pushStack">
                     .pushStack()
                   </a>
                 </li>
                 <li>
                   <a class="v1-3 selector v1-7-d old-version" title="A selector representing selector originally passed to jQuery()."
-                  href="https://api.jquery.com/selector/" data-src="jQuery.fn.selector">
+                  href="./selector.html" data-src="jQuery.fn.selector">
                     .selector
                   </a>
                 </li>
@@ -3285,105 +3030,105 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-6 deferred-always" title="Add handlers to be called when the Deferred object is either resolved or rejected."
-                  href="https://api.jquery.com/deferred.always/" data-src="">
+                  href="./deferred.always.html" data-src="">
                     deferred.always()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-done" title="Add handlers to be called when the Deferred object is resolved."
-                  href="https://api.jquery.com/deferred.done/" data-src="">
+                  href="./deferred.done.html" data-src="">
                     deferred.done()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-fail" title="Add handlers to be called when the Deferred object is rejected."
-                  href="https://api.jquery.com/deferred.fail/" data-src="">
+                  href="./deferred.fail.html" data-src="">
                     deferred.fail()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-isRejected v1-7-d v1-8-r removed old-version"
-                  title="Determine whether a Deferred object has been rejected." href="https://api.jquery.com/deferred.isRejected/"
+                  title="Determine whether a Deferred object has been rejected." href="./deferred.isRejected.html"
                   data-src="">
                     deferred.isRejected()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-isResolved v1-7-d v1-8-r removed old-version"
-                  title="Determine whether a Deferred object has been resolved." href="https://api.jquery.com/deferred.isResolved/"
+                  title="Determine whether a Deferred object has been resolved." href="./deferred.isResolved.html"
                   data-src="">
                     deferred.isResolved()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 deferred-notify" title="Call the progressCallbacks on a Deferred object with the given args."
-                  href="https://api.jquery.com/deferred.notify/" data-src="">
+                  href="./deferred.notify.html" data-src="">
                     deferred.notify()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 deferred-notifyWith" title="Call the progressCallbacks on a Deferred object with the given context and args."
-                  href="https://api.jquery.com/deferred.notifyWith/" data-src="">
+                  href="./deferred.notifyWith.html" data-src="">
                     deferred.notifyWith()
                   </a>
                 </li>
                 <li>
                   <a class="v1-6 deferred-pipe v1-8-d old-version" title="Utility method to filter and/or chain Deferreds."
-                  href="https://api.jquery.com/deferred.pipe/" data-src="">
+                  href="./deferred.pipe.html" data-src="">
                     deferred.pipe()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 deferred-progress" title="Add handlers to be called when the Deferred object generates progress notifications."
-                  href="https://api.jquery.com/deferred.progress/" data-src="">
+                  href="./deferred.progress.html" data-src="">
                     deferred.progress()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-promise" title="Return a Deferred's Promise object."
-                  href="https://api.jquery.com/deferred.promise/" data-src="">
+                  href="./deferred.promise.html" data-src="">
                     deferred.promise()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-reject" title="Reject a Deferred object and call any failCallbacks with the given args."
-                  href="https://api.jquery.com/deferred.reject/" data-src="">
+                  href="./deferred.reject.html" data-src="">
                     deferred.reject()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-rejectWith" title="Reject a Deferred object and call any failCallbacks with the given context and args."
-                  href="https://api.jquery.com/deferred.rejectWith/" data-src="">
+                  href="./deferred.rejectWith.html" data-src="">
                     deferred.rejectWith()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-resolve" title="Resolve a Deferred object and call any doneCallbacks with the given args."
-                  href="https://api.jquery.com/deferred.resolve/" data-src="">
+                  href="./deferred.resolve.html" data-src="">
                     deferred.resolve()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-resolveWith" title="Resolve a Deferred object and call any doneCallbacks with the given context and args."
-                  href="https://api.jquery.com/deferred.resolveWith/" data-src="">
+                  href="./deferred.resolveWith.html" data-src="">
                     deferred.resolveWith()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 deferred-state" title="Determine the current state of a Deferred object."
-                  href="https://api.jquery.com/deferred.state/" data-src="">
+                  href="./deferred.state.html" data-src="">
                     deferred.state()
                   </a>
                 </li>
                 <li>
                   <a class="v1-5 deferred-then" title="Add handlers to be called when the Deferred object is resolved or rejected."
-                  href="https://api.jquery.com/deferred.then/" data-src="">
+                  href="./deferred.then.html" data-src="">
                     deferred.then()
                   </a>
                 </li>
                 <li>
                   <a class="v1-6 promise" title="Return a Promise object to observe when all actions of a certain type bound to the collection, queued or not, have finished."
-                  href="https://api.jquery.com/promise/" data-src="">
+                  href="./promise.html" data-src="">
                     .promise()
                   </a>
                 </li>
@@ -3398,67 +3143,67 @@ $('li:nth-child(2n)').css({background:'#ccc'})
               <ul>
                 <li>
                   <a class="v1-7 jQuery-Callbacks" title="A multi-purpose callbacks list object that provides a powerful way to manage callback lists."
-                  href="https://api.jquery.com/jQuery.Callbacks/" data-src="jQuery.Callbacks">
+                  href="./jQuery.Callbacks.html" data-src="jQuery.Callbacks">
                     jQuery.Callbacks()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-add" title="Add a callback or a collection of callbacks to a callback list."
-                  href="https://api.jquery.com/callbacks.add/" data-src="">
+                  href="./callbacks.add.html" data-src="">
                     callbacks.add()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-disable" title="Disable a callback list from doing anything more."
-                  href="https://api.jquery.com/callbacks.disable/" data-src="">
+                  href="./callbacks.disable.html" data-src="">
                     callbacks.disable()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-empty" title="Remove all of the callbacks from a list."
-                  href="https://api.jquery.com/callbacks.empty/" data-src="">
+                  href="./callbacks.empty.html" data-src="">
                     callbacks.empty()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-fire" title="Call all of the callbacks with the given arguments."
-                  href="https://api.jquery.com/callbacks.fire/" data-src="">
+                  href="./callbacks.fire.html" data-src="">
                     callbacks.fire()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-fired" title="Determine if the callbacks have already been called at least once."
-                  href="https://api.jquery.com/callbacks.fired/" data-src="">
+                  href="./callbacks.fired.html" data-src="">
                     callbacks.fired()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-fireWith" title="Call all callbacks in a list with the given context and arguments."
-                  href="https://api.jquery.com/callbacks.fireWith/" data-src="">
+                  href="./callbacks.fireWith.html" data-src="">
                     callbacks.fireWith()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-has" title="Determine whether a supplied callback is in a list."
-                  href="https://api.jquery.com/callbacks.has/" data-src="">
+                  href="./callbacks.has.html" data-src="">
                     callbacks.has()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-lock" title="Lock a callback list in its current state."
-                  href="https://api.jquery.com/callbacks.lock/" data-src="">
+                  href="./callbacks.lock.html" data-src="">
                     callbacks.lock()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-locked" title="Determine if the callbacks list has been locked."
-                  href="https://api.jquery.com/callbacks.locked/" data-src="">
+                  href="./callbacks.locked.html" data-src="">
                     callbacks.locked()
                   </a>
                 </li>
                 <li>
                   <a class="v1-7 callbacks-remove" title="Remove a callback or a collection of callbacks from a callback list."
-                  href="https://api.jquery.com/callbacks.remove/" data-src="">
+                  href="./callbacks.remove.html" data-src="">
                     callbacks.remove()
                   </a>
                 </li>
@@ -3498,19 +3243,19 @@ $('li:nth-child(2n)').css({background:'#ccc'})
         </label>
       </fieldset>
       <p>
-        <a href="https://github.com/oscarotero/jquery-cheatsheet" title="Get the code from github">
+        <a href="./oscarotero.htmljquery-cheatsheet" title="Get the code from github">
           Source code
         </a>
         | by
-        <a href="https://twitter.com/misteroom">
+        <a href="./misteroom">
           @misteroom
-        </a>
+        <.htmla>
       </p>
     </div>
     <div id="modal" class="mfp-hide">
       <ul>
         <li class="link-api">
-          <a href="https://api.jquery.com/wrapAll/" class="selected">
+          <a href="./wrapAll.html" class="selected">
             API doc
           </a>
         </li>

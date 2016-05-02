@@ -1243,15 +1243,3 @@ article.core a:hover {
 	font-size:.8em;
 	color:rgb(51,51,51);
 }
-.main-content .h2-active::before{
-        content: '!';
-}
-.xuanze{
-	/*float: left;*/
-	position: absolute;
-	top:61px;
-	left: 174px;
-
-
-	
-}

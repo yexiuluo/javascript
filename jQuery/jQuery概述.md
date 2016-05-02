@@ -184,3 +184,89 @@ var colors=['red','blue','orange','black']
 ###把接口对象作为兄弟元素添加到某个元素身前或身后
 *insertAfter
 *insertBefore
+
+###on 添加事件重载
+给事件添加相同函数
+````javascript
+var clickHandler = function(){
+  console.log(1)
+}
+$('.item').on('click mouseleave mouseenter',clickHandler)
+
+````````
+//给事件添加不同函数
+``````````javascript
+var fn1 = function(){}
+var fn2 = function(){}
+var fn3 = function(){}
+$('.item').on({'click':fn1, 'mouseleave':fn2,'mouseenter':fn3})
+``````````````````
+``````````javascript
+//事件委托的方式
+$('#ul').on('click','li',function(){
+  
+})
+//事件委托的另一种方式
+$('#ul').delegate('li','click',function(){
+  
+})
+``````````````````
+###接口事件中的注意事项：
+
+1.on() 的几种添加方式  *一次绑定多个事件  用同一个处理函数
+                      *一次绑定多个事件   用不同的处理函数
+2.事件委托的添加方式（只能使用 on 和 delegate 方法）
+3.mouseover  mouseout 方法由于事件冒泡带来多次触发
+一般我们使用mouseenter 和 mouseleave
+4.focus blur =>  focusin focusout  同上  后面的两个不会冒泡
+5.ready()事件 一般用$(function(){})来代替
+  内部的处理方式是 document.addEventListener('DOMContentLoaded');
+  如果文档结构（不包含图片，脚本等）已经加载完成，直接运行函数
+  如果还没有加载完成  把函数绑定到'DOMContentLoaded'事件
+6. triggle()会模仿浏览器出发时间（会冒泡）  triggerHandler 不会
+7.所有事件添加函数的返回值都是要绑定事件的那个接口对象，所以可以继续链式调用
+$('.item').click(function(){
+  console.log(1)
+}).css()
+
+
+###接口中的事件对象
+
+继承自原声的事件对象  e.keyCode  e.altKey  e.target e.clientx
+
+*e.currentTarget
+*e.data
+```````javascript
+var xs = function(){
+  var bb = {a:1,b:2};
+  $('li:lt(3)').on('click',function(e){
+       e.preventDefault();
+       console.log(bb)
+  })
+  setInterval(function(){
+  bb = {a:Math.random(),b:Math.random()}
+  },1000)
+}//这样弹出的bb就不是原来看见的bb，所以才要把bb作为参数加入接口事件中，用e.data输出
+//e.data
+$('li').on('click',{a:1,b:2},function(e){
+      console.log(e.data)
+})
+$($0).click({a:1,b:2},function(e){
+      console.log(e.data)
+})
+
+//e.relatedTarget
+$($0).mouseleave(function(e){
+  if($(e.relatedTarget).is('div')){
+      alert(1)
+}
+else if($(e.relatedTarget).is('section')){
+alert(2)
+}
+})
+//namespace
+$($0).on('click.wei',function(e){
+      console.log('卫泽宇')
+})
+$($0).triggle('click.wei')
+``````````````````
